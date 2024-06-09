@@ -1,6 +1,6 @@
 Abg==2.3.8
 aiofiles
-aiohttp>=2.2.5
+aiohttp
 httpx[http2]>=0.18.1,<1.0.0
 alphabet_detector==0.0.7
 beautifulsoup4==4.11.1
@@ -37,7 +37,7 @@ Pyrofork==2.3.21.post3
 python-arq==6.0.7
 python-dotenv==1.0.1
 ffmpeg-python==0.2.0
-redis==5.0.2
+redis
 telegraph==2.2.0
 motor
 pymongo[srv]==4.7.2
