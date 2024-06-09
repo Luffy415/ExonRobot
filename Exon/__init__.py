@@ -33,7 +33,7 @@ def get_user_list(__init__, key):
 
 
 # enable logging
-FORMAT = "[ᴇxᴏɴ] %(message)s"
+FORMAT = "[ᴢᴇɴ] %(message)s"
 logging.basicConfig(
     handlers=[logging.FileHandler("log.txt"), logging.StreamHandler()],
     level=logging.INFO,
@@ -44,8 +44,8 @@ logging.getLogger("apscheduler").setLevel(logging.ERROR)
 logging.getLogger("telethon").setLevel(logging.ERROR)
 logging.getLogger("pyrogram").setLevel(logging.ERROR)
 
-LOGGER = logging.getLogger("[ᴇxᴏɴ]")
-LOGGER.info("ᴇxᴏɴ ɪs sᴛᴀʀᴛɪɴɢ. | ᴀɴ ᴀʙɪsʜɴᴏɪᴍғ ᴘʀᴏᴊᴇᴄᴛ ᴘᴀʀᴛs. | ʟɪᴄᴇɴsᴇᴅ ᴜɴᴅᴇʀ ɢᴘʟᴠ3.")
+LOGGER = logging.getLogger("[ᴢᴇɴ]")
+LOGGER.info("ᴢᴇɴ ɪs sᴛᴀʀᴛɪɴɢ. | ᴀɴ ᴀʙɪsʜɴᴏɪᴍғ ᴘʀᴏᴊᴇᴄᴛ ᴘᴀʀᴛs. | ʟɪᴄᴇɴsᴇᴅ ᴜɴᴅᴇʀ ɢᴘʟᴠ3.")
 
 try:
     if environ.get("ENV"):

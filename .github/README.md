@@ -3,7 +3,7 @@
 **ᴋɪɴɢ ᴀʙɪsʜɴᴏɪ**
 
 <h2 align="center">
-    ──「 ᴇxᴏɴ   ʀᴏʙᴏᴛ 」──
+    ──「 ᴢᴇɴ   ʀᴏʙᴏᴛ 」──
 </h2>
 
 ##  ᴄᴀᴛᴄʜ ᴍᴇ ɪɴ [ᴛɢ🏃‍♀️](https://t.me/AbishnoiMF) 
@@ -20,7 +20,7 @@
 <a href="https://github.com/Abishnoi69/ZenRobot/commits/Abishnoi69"> <img src="https://img.shields.io/github/last-commit/Abishnoi69/ZenRobot?color=black&logo=github&logoColor=black&style=for-the-badge" /></a>
 </p>
 
-_**ᴀᴠᴀɪʟᴀʙʟᴇ ᴏɴ ᴛᴇʟᴇɢʀᴀᴍ ᴀs [ᴇxᴏɴ ✘ ʀᴏʙᴏᴛ](https://t.me/Zen_Robot)**_
+_**ᴀᴠᴀɪʟᴀʙʟᴇ ᴏɴ ᴛᴇʟᴇɢʀᴀᴍ ᴀs [ᴢᴇɴ ✘ ʀᴏʙᴏᴛ](https://t.me/Zen_Robot)**_
 <img src="https://user-images.githubusercontent.com/73097560/115834477-dbab4500-a447-11eb-908a-139a6edaec5c.gif">
 <img src="https://user-images.githubusercontent.com/73097560/115834477-dbab4500-a447-11eb-908a-139a6edaec5c.gif">
 
