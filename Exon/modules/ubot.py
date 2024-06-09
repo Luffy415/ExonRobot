@@ -31,8 +31,8 @@ from asyncio.exceptions import TimeoutError
 
 from telethon.errors.rpcerrorlist import YouBlockedUserError
 
-from Exon import ubot
-from Exon.events import register
+from Zen import ubot
+from Zen.events import register
 
 
 @register(pattern="^/sg ?(.*)")

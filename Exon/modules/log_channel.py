@@ -32,8 +32,8 @@ from functools import wraps
 
 from telegram.ext import CallbackContext
 
-from Exon.modules.helper_funcs.decorators import Exoncallback, Exoncmd
-from Exon.modules.helper_funcs.misc import is_module_loaded
+from Zen.modules.helper_funcs.decorators import Zencallback, Zencmd
+from Zen.modules.helper_funcs.misc import is_module_loaded
 
 from ..modules.helper_funcs.anonymous import AdminPerms, user_admin
 
@@ -45,10 +45,10 @@ if is_module_loaded(FILENAME):
     from telegram.ext import JobQueue
     from telegram.utils.helpers import escape_markdown
 
-    from Exon import EVENT_LOGS, LOGGER, dispatcher
-    from Exon.modules.helper_funcs.chat_status import is_user_admin
-    from Exon.modules.helper_funcs.chat_status import user_admin as u_admin
-    from Exon.modules.sql import log_channel_sql as sql
+    from Zen import EVENT_LOGS, LOGGER, dispatcher
+    from Zen.modules.helper_funcs.chat_status import is_user_admin
+    from Zen.modules.helper_funcs.chat_status import user_admin as u_admin
+    from Zen.modules.sql import log_channel_sql as sql
 
     def loggable(func):
         @wraps(func)
@@ -140,7 +140,7 @@ if is_module_loaded(FILENAME):
                     + "\n\nFormatting has been disabled due to an unexpected error.",
                 )
 
-    @Exoncmd(command="logchannel")
+    @Zencmd(command="logchannel")
     @u_admin
     def logging(update: Update, context: CallbackContext):
         bot = context.bot
@@ -158,7 +158,7 @@ if is_module_loaded(FILENAME):
         else:
             message.reply_text("No log channel has been set for this group!")
 
-    @Exoncmd(command="setlog")
+    @Zencmd(command="setlog")
     @user_admin(AdminPerms.CAN_CHANGE_INFO)
     def setlog(update: Update, context: CallbackContext):
         bot = context.bot
@@ -200,7 +200,7 @@ if is_module_loaded(FILENAME):
                 " - forward the /setlog to the group\n",
             )
 
-    @Exoncmd(command="unsetlog")
+    @Zencmd(command="unsetlog")
     @user_admin(AdminPerms.CAN_CHANGE_INFO)
     def unsetlog(update: Update, context: CallbackContext):
         bot = context.bot
@@ -240,7 +240,7 @@ else:
         return func
 
 
-@Exoncmd("logsettings")
+@Zencmd("logsettings")
 @user_admin(AdminPerms.CAN_CHANGE_INFO)
 def log_settings(update: Update, _: CallbackContext):
     chat = update.effective_chat
@@ -266,10 +266,10 @@ def log_settings(update: Update, _: CallbackContext):
     msg.reply_text("Toggle channel log settings", reply_markup=btn)
 
 
-from Exon.modules.sql import log_channel_sql as sql
+from Zen.modules.sql import log_channel_sql as sql
 
 
-@Exoncallback(pattern=r"log_tog_.*")
+@Zencallback(pattern=r"log_tog_.*")
 def log_setting_callback(update: Update, context: CallbackContext):
     cb = update.callback_query
     user = cb.from_user
@@ -313,7 +313,7 @@ __mod_name__ = "𝐋ᴏɢs "
 
 # ғᴏʀ ʜᴇʟᴘ ᴍᴇɴᴜ
 
-from Exon.modules.language import gs
+from Zen.modules.language import gs
 
 
 def get_help(chat):

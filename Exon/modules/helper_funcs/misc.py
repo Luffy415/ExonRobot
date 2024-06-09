@@ -46,7 +46,7 @@ from telegram import (
 )
 from telegram.error import TelegramError
 
-from Exon import NO_LOAD
+from Zen import NO_LOAD
 
 
 class EqInlineKeyboardButton(InlineKeyboardButton):

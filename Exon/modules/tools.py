@@ -33,9 +33,9 @@ import os
 
 from telethon import types
 
-from Exon import Abishnoi as asau
-from Exon import telethn as Client
-from Exon.events import register
+from Zen import Abishnoi as asau
+from Zen import telethn as Client
+from Zen.events import register
 
 TMP_DOWNLOAD_DIRECTORY = "./"
 
@@ -44,7 +44,7 @@ from datetime import datetime
 from PIL import Image
 from telegraph import Telegraph, exceptions, upload_file
 
-wibu = "Exon_Robot"
+wibu = "Zen_Robot"
 telegraph = Telegraph()
 data = telegraph.create_account(short_name=wibu)
 auth_url = data["auth_url"]

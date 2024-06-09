@@ -33,8 +33,8 @@ from typing import Union
 from sqlalchemy import Boolean, Column, Integer, String, UnicodeText
 from sqlalchemy.sql.sqltypes import BigInteger
 
-from Exon.modules.helper_funcs.msg_types import Types
-from Exon.modules.sql import BASE, SESSION
+from Zen.modules.helper_funcs.msg_types import Types
+from Zen.modules.sql import BASE, SESSION
 
 DEFAULT_WELCOME = "Hey {first}, how are you?"
 DEFAULT_GOODBYE = "Nice knowing ya!"

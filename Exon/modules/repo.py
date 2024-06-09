@@ -10,7 +10,7 @@ from pyrogram.types import InlineKeyboardButton, InlineKeyboardMarkup
 from telegram import __version__ as o
 from telethon import __version__ as s
 
-from Exon import Abishnoi as pbot
+from Zen import Abishnoi as pbot
 
 ABISHNOIX = "https://te.legra.ph/file/abfc49a1cc4b5629dc8cd.jpg"
 
@@ -34,7 +34,7 @@ async def repo(_, message):
                         "•ᴍᴜꜱɪᴄ•", url="https://github.com/Abishnoi69/AsuXMusic"
                     ),
                     InlineKeyboardButton(
-                        "•ʀᴏʙᴏᴠ1•", url="https://github.com/Abishnoi69/ExonRobot"
+                        "•ʀᴏʙᴏᴠ1•", url="https://github.com/Abishnoi69/ZenRobot"
                     ),
                 ]
             ]

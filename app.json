@@ -2,13 +2,13 @@
 {
     "name": "ᴇxᴏɴᴏʙᴏᴛ",
     "description": "Telegram Group Management Bot Written In Python Using python-telegram-bot.",
-    "repository": "https://github.com/Abishnoi69/ExonRobot",
+    "repository": "https://github.com/Abishnoi69/ZenRobot",
     "logo": "https://te.legra.ph/file/b0e09aabe796209f01d3d.jpg",
     "keywords": [
     "python3",
     "telegram",
     "bot",
-    "ExonRobot",
+    "ZenRobot",
     "telegram-bot",
     "management",
     "ptb",

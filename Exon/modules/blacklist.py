@@ -42,19 +42,19 @@ from telegram.error import BadRequest
 from telegram.ext import CallbackContext, CommandHandler, Filters, MessageHandler
 from telegram.utils.helpers import mention_html
 
-import Exon.modules.sql.blacklist_sql as sql
-from Exon import LOGGER, dispatcher
-from Exon.modules.connection import connected
-from Exon.modules.disable import DisableAbleCommandHandler
-from Exon.modules.helper_funcs.alternate import send_message, typing_action
-from Exon.modules.helper_funcs.chat_status import user_admin, user_not_admin
-from Exon.modules.helper_funcs.decorators import Exoncallback as akboss
-from Exon.modules.helper_funcs.extraction import extract_text
-from Exon.modules.helper_funcs.misc import split_message
-from Exon.modules.helper_funcs.string_handling import extract_time
-from Exon.modules.log_channel import loggable
-from Exon.modules.sql.approve_sql import is_approved
-from Exon.modules.warns import warn
+import Zen.modules.sql.blacklist_sql as sql
+from Zen import LOGGER, dispatcher
+from Zen.modules.connection import connected
+from Zen.modules.disable import DisableAbleCommandHandler
+from Zen.modules.helper_funcs.alternate import send_message, typing_action
+from Zen.modules.helper_funcs.chat_status import user_admin, user_not_admin
+from Zen.modules.helper_funcs.decorators import Zencallback as akboss
+from Zen.modules.helper_funcs.extraction import extract_text
+from Zen.modules.helper_funcs.misc import split_message
+from Zen.modules.helper_funcs.string_handling import extract_time
+from Zen.modules.log_channel import loggable
+from Zen.modules.sql.approve_sql import is_approved
+from Zen.modules.warns import warn
 
 BLACKLIST_GROUP = 11
 
@@ -487,7 +487,7 @@ __handlers__ = [
 # """
 # ғᴏʀ ʜᴇʟᴘ ᴍᴇɴᴜ
 
-from Exon.modules.language import gs
+from Zen.modules.language import gs
 
 
 def blacklist_help(update: Update, context: CallbackContext):

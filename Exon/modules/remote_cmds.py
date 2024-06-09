@@ -31,16 +31,16 @@ from telegram import ChatPermissions, Update
 from telegram.error import BadRequest, TelegramError
 from telegram.ext import CallbackContext
 
-from Exon import LOGGER
-from Exon.modules.helper_funcs.chat_status import (
+from Zen import LOGGER
+from Zen.modules.helper_funcs.chat_status import (
     bot_admin,
     dev_plus,
     is_bot_admin,
     is_user_ban_protected,
     is_user_in_chat,
 )
-from Exon.modules.helper_funcs.decorators import Exoncmd
-from Exon.modules.helper_funcs.extraction import extract_user_and_text
+from Zen.modules.helper_funcs.decorators import Zencmd
+from Zen.modules.helper_funcs.extraction import extract_user_and_text
 
 RBAN_ERRORS = {
     "User is an administrator of the chat",
@@ -113,7 +113,7 @@ RUNMUTE_ERRORS = {
 }
 
 
-@Exoncmd(command="rban")
+@Zencmd(command="rban")
 @bot_admin
 def rban(update: Update, context: CallbackContext):
     bot, args = context.bot, context.args
@@ -194,7 +194,7 @@ def rban(update: Update, context: CallbackContext):
             message.reply_text("Well damn, I can't ban that user.")
 
 
-@Exoncmd(command="runban")
+@Zencmd(command="runban")
 @bot_admin
 def runban(update: Update, context: CallbackContext):
     bot, args = context.bot, context.args
@@ -277,7 +277,7 @@ def runban(update: Update, context: CallbackContext):
             message.reply_text("Well damn, I can't unban that user.")
 
 
-@Exoncmd(command="rkick")
+@Zencmd(command="rkick")
 @bot_admin
 def rkick(update: Update, context: CallbackContext):
     bot, args = context.bot, context.args
@@ -358,7 +358,7 @@ def rkick(update: Update, context: CallbackContext):
             message.reply_text("Well damn, I can't punch that user.")
 
 
-@Exoncmd(command="rmute")
+@Zencmd(command="rmute")
 @bot_admin
 def rmute(update: Update, context: CallbackContext):
     bot, args = context.bot, context.args
@@ -443,7 +443,7 @@ def rmute(update: Update, context: CallbackContext):
             message.reply_text("Well damn, I can't mute that user.")
 
 
-@Exoncmd(command="runmute")
+@Zencmd(command="runmute")
 @bot_admin
 def runmute(update: Update, context: CallbackContext):
     bot, args = context.bot, context.args
@@ -538,7 +538,7 @@ def runmute(update: Update, context: CallbackContext):
             message.reply_text("Well damn, I can't unmute that user.")
 
 
-@Exoncmd(command="recho")
+@Zencmd(command="recho")
 @dev_plus
 def recho(update: Update, context: CallbackContext):
     bot = context.bot
@@ -565,7 +565,7 @@ __mod_name__ = "𝐑-ᴄᴍᴅs"
 
 
 # """
-from Exon.modules.language import gs
+from Zen.modules.language import gs
 
 
 def get_help(chat):

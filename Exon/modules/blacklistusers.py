@@ -33,11 +33,11 @@ from telegram.error import BadRequest
 from telegram.ext import CallbackContext, CommandHandler
 from telegram.utils.helpers import mention_html
 
-import Exon.modules.sql.blacklistusers_sql as sql
-from Exon import DEMONS, DEV_USERS, DRAGONS, OWNER_ID, TIGERS, WOLVES, dispatcher
-from Exon.modules.helper_funcs.chat_status import dev_plus
-from Exon.modules.helper_funcs.extraction import extract_user, extract_user_and_text
-from Exon.modules.log_channel import gloggable
+import Zen.modules.sql.blacklistusers_sql as sql
+from Zen import DEMONS, DEV_USERS, DRAGONS, OWNER_ID, TIGERS, WOLVES, dispatcher
+from Zen.modules.helper_funcs.chat_status import dev_plus
+from Zen.modules.helper_funcs.extraction import extract_user, extract_user_and_text
+from Zen.modules.log_channel import gloggable
 
 BLACKLISTWHITELIST = [OWNER_ID] + DEV_USERS + DRAGONS + WOLVES + DEMONS
 BLABLEUSERS = [OWNER_ID] + DEV_USERS
@@ -167,7 +167,7 @@ __handlers__ = [BL_HANDLER, UNBL_HANDLER, BLUSERS_HANDLER]
 
 # ғᴏʀ ʜᴇʟᴘ ᴍᴇɴᴜ
 # """
-from Exon.modules.language import gs
+from Zen.modules.language import gs
 
 
 def get_help(chat):

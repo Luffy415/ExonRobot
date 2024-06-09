@@ -34,12 +34,12 @@ from telegram.error import BadRequest
 from telegram.ext import CallbackContext, CallbackQueryHandler
 from telegram.utils.helpers import mention_html
 
-import Exon.modules.sql.approve_sql as sql
-from Exon import DRAGONS, dispatcher
-from Exon.modules.disable import DisableAbleCommandHandler
-from Exon.modules.helper_funcs.chat_status import user_admin
-from Exon.modules.helper_funcs.extraction import extract_user
-from Exon.modules.log_channel import loggable
+import Zen.modules.sql.approve_sql as sql
+from Zen import DRAGONS, dispatcher
+from Zen.modules.disable import DisableAbleCommandHandler
+from Zen.modules.helper_funcs.chat_status import user_admin
+from Zen.modules.helper_funcs.extraction import extract_user
+from Zen.modules.log_channel import loggable
 
 
 @loggable
@@ -230,7 +230,7 @@ __mod_name__ = "𝐀ᴘᴘʀᴏᴠᴀʟ"
 
 # ғᴏʀ ʜᴇʟᴘ ᴍᴇɴᴜ
 # """
-from Exon.modules.language import gs
+from Zen.modules.language import gs
 
 
 def get_help(chat):

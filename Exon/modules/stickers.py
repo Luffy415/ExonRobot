@@ -50,9 +50,9 @@ from telegram import (
 from telegram.ext import CallbackContext, CallbackQueryHandler, CommandHandler
 from telegram.utils.helpers import mention_html
 
-from Exon import dispatcher
-from Exon import telethn as bot
-from Exon.events import register as asux
+from Zen import dispatcher
+from Zen import telethn as bot
+from Zen.events import register as asux
 
 combot_stickers_url = "https://combot.org/telegram/stickers?q="
 
@@ -880,7 +880,7 @@ async def drawText(image_path, text):
 
     i_width, i_height = img.size
 
-    fnt = "ariel.ttf" if os.name == "nt" else "./Exon/modules/resources/asu.ttf"
+    fnt = "ariel.ttf" if os.name == "nt" else "./Zen/modules/resources/asu.ttf"
     m_font = ImageFont.truetype(fnt, int((70 / 640) * i_width))
 
     if ";" in text:
@@ -1008,7 +1008,7 @@ __mod_name__ = "𝐒ᴛɪᴄᴋᴇʀ"
 
 
 # """
-from Exon.modules.language import gs
+from Zen.modules.language import gs
 
 
 def get_help(chat):

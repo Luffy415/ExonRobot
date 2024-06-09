@@ -30,7 +30,7 @@ import threading
 
 from sqlalchemy import Column, String, UnicodeText
 
-from Exon.modules.sql import BASE, SESSION
+from Zen.modules.sql import BASE, SESSION
 
 
 class BlacklistUsers(BASE):

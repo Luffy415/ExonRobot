@@ -1,6 +1,6 @@
 from envparse import env
 
-from Exon import LOGGER
+from Zen import LOGGER
 
 DEFAULTS = {
     "LOAD_MODULES": True,

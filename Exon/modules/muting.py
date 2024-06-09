@@ -46,8 +46,8 @@ from telegram.error import BadRequest
 from telegram.ext import CallbackContext, CallbackQueryHandler, CommandHandler
 from telegram.utils.helpers import mention_html
 
-from Exon import LOGGER, TIGERS, dispatcher
-from Exon.modules.helper_funcs.chat_status import (
+from Zen import LOGGER, TIGERS, dispatcher
+from Zen.modules.helper_funcs.chat_status import (
     bot_admin,
     can_restrict,
     connection_status,
@@ -55,9 +55,9 @@ from Exon.modules.helper_funcs.chat_status import (
     user_admin,
     user_admin_no_reply,
 )
-from Exon.modules.helper_funcs.extraction import extract_user_and_text
-from Exon.modules.helper_funcs.string_handling import extract_time
-from Exon.modules.log_channel import loggable
+from Zen.modules.helper_funcs.extraction import extract_user_and_text
+from Zen.modules.helper_funcs.string_handling import extract_time
+from Zen.modules.log_channel import loggable
 
 
 def check_user(user_id: int, bot: Bot, update: Update) -> Optional[str]:
@@ -371,7 +371,7 @@ __handlers__ = [MUTE_HANDLER, UNMUTE_HANDLER, TEMPMUTE_HANDLER]
 
 
 # """
-from Exon.modules.language import gs
+from Zen.modules.language import gs
 
 
 def get_help(chat):

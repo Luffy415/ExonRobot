@@ -36,8 +36,8 @@ from telegram.error import BadRequest, TelegramError, Unauthorized
 from telegram.ext import CallbackContext, CommandHandler, Filters, MessageHandler
 from telegram.utils.helpers import mention_html
 
-import Exon.modules.no_sql.global_bans_db as gban_db
-from Exon import (
+import Zen.modules.no_sql.global_bans_db as gban_db
+from Zen import (
     DEMONS,
     DEV_USERS,
     DRAGONS,
@@ -51,15 +51,15 @@ from Exon import (
     dispatcher,
     sw,
 )
-from Exon.modules.helper_funcs.chat_status import (
+from Zen.modules.helper_funcs.chat_status import (
     is_user_admin,
     support_plus,
     user_admin,
 )
-from Exon.modules.helper_funcs.decorators import Exonmsg
-from Exon.modules.helper_funcs.extraction import extract_user, extract_user_and_text
-from Exon.modules.helper_funcs.misc import send_to_list
-from Exon.modules.no_sql.users_db import get_user_com_chats
+from Zen.modules.helper_funcs.decorators import Zenmsg
+from Zen.modules.helper_funcs.extraction import extract_user, extract_user_and_text
+from Zen.modules.helper_funcs.misc import send_to_list
+from Zen.modules.no_sql.users_db import get_user_com_chats
 
 GBAN_ENFORCE_GROUP = 6
 
@@ -460,7 +460,7 @@ def check_and_ban(update, user_id, should_message=True):
             update.effective_message.reply_text(text, parse_mode=ParseMode.HTML)
 
 
-@Exonmsg(
+@Zenmsg(
     (Filters.all & Filters.chat_type.groups),
     can_disable=False,
     group=GBAN_ENFORCE_GROUP,
@@ -618,7 +618,7 @@ __mod_name__ = "𝐀-sᴘᴀᴍ"
 
 
 # """
-from Exon.modules.language import gs
+from Zen.modules.language import gs
 
 
 def get_help(chat):

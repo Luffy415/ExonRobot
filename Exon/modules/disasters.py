@@ -35,12 +35,12 @@ from telegram import ParseMode, TelegramError, Update
 from telegram.ext import CallbackContext, CommandHandler
 from telegram.utils.helpers import mention_html
 
-from Exon import DEMONS, DEV_USERS, DRAGONS, OWNER_ID, TIGERS, WOLVES, dispatcher
-from Exon.modules.helper_funcs.chat_status import dev_plus, sudo_plus, whitelist_plus
-from Exon.modules.helper_funcs.extraction import extract_user
-from Exon.modules.log_channel import gloggable
+from Zen import DEMONS, DEV_USERS, DRAGONS, OWNER_ID, TIGERS, WOLVES, dispatcher
+from Zen.modules.helper_funcs.chat_status import dev_plus, sudo_plus, whitelist_plus
+from Zen.modules.helper_funcs.extraction import extract_user
+from Zen.modules.log_channel import gloggable
 
-ELEVATED_USERS_FILE = os.path.join(os.getcwd(), "Exon/elevated_users.json")
+ELEVATED_USERS_FILE = os.path.join(os.getcwd(), "Zen/elevated_users.json")
 
 
 def check_user_id(user_id: int, context: CallbackContext) -> Optional[str]:
@@ -593,7 +593,7 @@ __handlers__ = [
 
 
 # """
-from Exon.modules.language import gs
+from Zen.modules.language import gs
 
 
 def get_help(chat):

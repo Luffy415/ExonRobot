@@ -25,8 +25,8 @@ SOFTWARE.
 
 from telethon.tl.types import ChannelParticipantsAdmins
 
-from Exon import DRAGONS
-from Exon.modules.helper_funcs.telethn import IMMUNE_USERS, telethn
+from Zen import DRAGONS
+from Zen.modules.helper_funcs.telethn import IMMUNE_USERS, telethn
 
 
 async def user_is_ban_protected(user_id: int, message):

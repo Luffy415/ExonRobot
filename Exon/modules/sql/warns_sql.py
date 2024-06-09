@@ -33,7 +33,7 @@ from sqlalchemy import Boolean, Column, Integer, String, UnicodeText, distinct, 
 from sqlalchemy.dialects import postgresql
 from sqlalchemy.sql.sqltypes import BigInteger
 
-from Exon.modules.sql import BASE, SESSION
+from Zen.modules.sql import BASE, SESSION
 
 
 class Warns(BASE):

@@ -30,8 +30,8 @@ SOFTWARE.
 
 import requests
 
-from Exon import SUPPORT_CHAT
-from Exon.events import register as abishnoi
+from Zen import SUPPORT_CHAT
+from Zen.events import register as abishnoi
 
 
 @abishnoi(pattern="[/!]dare")
@@ -56,7 +56,7 @@ async def _(asux):
 
 __mod_name__ = "𝐓ʀᴜᴛʜ-Dᴀʀᴇ"
 
-from Exon.modules.language import gs
+from Zen.modules.language import gs
 
 
 def get_help(chat):

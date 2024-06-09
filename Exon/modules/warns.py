@@ -52,25 +52,25 @@ from telegram.ext import (
 )
 from telegram.utils.helpers import mention_html
 
-from Exon import TIGERS, WOLVES, dispatcher
-from Exon.modules.disable import DisableAbleCommandHandler
-from Exon.modules.helper_funcs.chat_status import (
+from Zen import TIGERS, WOLVES, dispatcher
+from Zen.modules.disable import DisableAbleCommandHandler
+from Zen.modules.helper_funcs.chat_status import (
     bot_admin,
     can_restrict,
     is_user_admin,
     user_admin_no_reply,
 )
-from Exon.modules.helper_funcs.extraction import (
+from Zen.modules.helper_funcs.extraction import (
     extract_text,
     extract_user,
     extract_user_and_text,
 )
-from Exon.modules.helper_funcs.filters import CustomFilters
-from Exon.modules.helper_funcs.misc import split_message
-from Exon.modules.helper_funcs.string_handling import split_quotes
-from Exon.modules.log_channel import loggable
-from Exon.modules.sql import warns_sql as sql
-from Exon.modules.sql.approve_sql import is_approved
+from Zen.modules.helper_funcs.filters import CustomFilters
+from Zen.modules.helper_funcs.misc import split_message
+from Zen.modules.helper_funcs.string_handling import split_quotes
+from Zen.modules.log_channel import loggable
+from Zen.modules.sql import warns_sql as sql
+from Zen.modules.sql.approve_sql import is_approved
 
 from ..modules.helper_funcs.anonymous import AdminPerms, user_admin
 
@@ -573,7 +573,7 @@ __mod_name__ = "𝐖ᴀʀɴs"
 
 
 # """
-from Exon.modules.language import gs
+from Zen.modules.language import gs
 
 
 def get_help(chat):

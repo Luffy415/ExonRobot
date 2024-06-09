@@ -25,7 +25,7 @@ SOFTWARE.
 
 from asyncio import gather
 
-from Exon import aiohttpsession as session
+from Zen import aiohttpsession as session
 
 
 async def get(url: str, *args, **kwargs):

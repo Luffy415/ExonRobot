@@ -33,7 +33,7 @@ from typing import Union
 from sqlalchemy import Boolean, Column, String
 from sqlalchemy.sql.sqltypes import BigInteger
 
-from Exon.modules.sql import BASE, SESSION
+from Zen.modules.sql import BASE, SESSION
 
 
 class ReportingUserSettings(BASE):

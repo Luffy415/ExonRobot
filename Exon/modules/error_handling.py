@@ -37,10 +37,10 @@ import requests
 from telegram import InlineKeyboardButton, InlineKeyboardMarkup, ParseMode, Update
 from telegram.ext import CallbackContext
 
-from Exon import DEV_USERS
-from Exon import LOG_GROUP_ID as ERROR_LOGS
-from Exon import dispatcher
-from Exon.modules.helper_funcs.decorators import Exoncmd
+from Zen import DEV_USERS
+from Zen import LOG_GROUP_ID as ERROR_LOGS
+from Zen import dispatcher
+from Zen.modules.helper_funcs.decorators import Zencmd
 
 pretty_errors.mono()
 
@@ -118,7 +118,7 @@ def error_callback(update: Update, context: CallbackContext):
         url = f"https://spaceb.in/{response['payload']['id']}"
         context.bot.send_message(
             ERROR_LOGS,
-            text=f"#{context.error.identifier}\n<b>Your Cute Exon Nagisa Have An Error For You:"
+            text=f"#{context.error.identifier}\n<b>Your Cute Zen Nagisa Have An Error For You:"
             f"</b>\n<code>{e}</code>",
             reply_markup=InlineKeyboardMarkup(
                 [[InlineKeyboardButton("sᴇxʏ ᴇxᴏɴ ᴇʀʀᴏʀ ʟᴏɢs", url=url)]],
@@ -127,7 +127,7 @@ def error_callback(update: Update, context: CallbackContext):
         )
 
 
-@Exoncmd(command="errors")
+@Zencmd(command="errors")
 def list_errors(update: Update, context: CallbackContext):
     if update.effective_user.id not in DEV_USERS:
         return

@@ -41,7 +41,7 @@ from telethon.tl.custom import Message
 from telethon.tl.types import MessageService
 from telethon.utils import get_display_name, get_peer_id
 
-from Exon.events import register
+from Zen.events import register
 
 ##api
 
@@ -412,7 +412,7 @@ async def quott_(event):
 
 __mod_name__ = "𝐐ᴜᴏᴛʟʏ"
 
-from Exon.modules.language import gs
+from Zen.modules.language import gs
 
 
 def get_help(chat):

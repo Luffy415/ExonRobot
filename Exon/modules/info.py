@@ -30,9 +30,9 @@ SOFTWARE.
 from pyrogram import filters
 from pyrogram.types import Message
 
-from Exon import DEV_USERS
-from Exon import Abishnoi as app
-from Exon.utils.sections import section
+from Zen import DEV_USERS
+from Zen import Abishnoi as app
+from Zen.utils.sections import section
 
 
 async def get_user_info(user, already=False):
@@ -147,7 +147,7 @@ __mod_name__ = "𝐂ɪɴғᴏ"
 
 
 # """
-from Exon.modules.language import gs
+from Zen.modules.language import gs
 
 
 def get_help(chat):

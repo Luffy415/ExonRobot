@@ -38,10 +38,10 @@ from telegram.inline.inlinekeyboardmarkup import InlineKeyboardMarkup
 from telegram.update import Update
 from telegram.utils.helpers import mention_html
 
-from Exon import dispatcher
-from Exon.modules.helper_funcs.chat_status import bot_admin, user_can_restrict_no_reply
-from Exon.modules.helper_funcs.decorators import Exoncallback
-from Exon.modules.log_channel import loggable
+from Zen import dispatcher
+from Zen.modules.helper_funcs.chat_status import bot_admin, user_can_restrict_no_reply
+from Zen.modules.helper_funcs.decorators import Zencallback
+from Zen.modules.log_channel import loggable
 
 
 def chat_join_req(upd: Update, ctx: CallbackContext):
@@ -68,7 +68,7 @@ def chat_join_req(upd: Update, ctx: CallbackContext):
     )
 
 
-@Exoncallback(pattern=r"cb_approve=")
+@Zencallback(pattern=r"cb_approve=")
 @user_can_restrict_no_reply
 @bot_admin
 @loggable
@@ -91,7 +91,7 @@ def approve_joinreq(update: Update, context: CallbackContext) -> str:
         update.effective_message.edit_text(str(e))
 
 
-@Exoncallback(pattern=r"cb_decline=")
+@Zencallback(pattern=r"cb_decline=")
 @user_can_restrict_no_reply
 @bot_admin
 @loggable

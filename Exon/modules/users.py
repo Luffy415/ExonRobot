@@ -34,11 +34,11 @@ from telegram import ParseMode, TelegramError, Update
 from telegram.error import BadRequest, Unauthorized
 from telegram.ext import CallbackContext, Filters
 
-import Exon.modules.no_sql.users_db as user_db
-from Exon import DEV_USERS, LOGGER, OWNER_ID, dispatcher
-from Exon.modules.helper_funcs.chat_status import dev_plus, sudo_plus
-from Exon.modules.helper_funcs.decorators import Exoncmd, Exonmsg
-from Exon.modules.no_sql.users_db import get_all_users
+import Zen.modules.no_sql.users_db as user_db
+from Zen import DEV_USERS, LOGGER, OWNER_ID, dispatcher
+from Zen.modules.helper_funcs.chat_status import dev_plus, sudo_plus
+from Zen.modules.helper_funcs.decorators import Zencmd, Zenmsg
+from Zen.modules.no_sql.users_db import get_all_users
 
 USERS_GROUP = 4
 CHAT_GROUP = 5
@@ -74,7 +74,7 @@ def get_user_id(username):
     return None
 
 
-@Exoncmd(command=["broadcastall", "broadcastusers", "broadcastgroups"])
+@Zencmd(command=["broadcastall", "broadcastusers", "broadcastgroups"])
 @dev_plus
 def broadcast(update: Update, context: CallbackContext):
     to_send = update.effective_message.text.split(None, 1)
@@ -122,7 +122,7 @@ def broadcast(update: Update, context: CallbackContext):
         )
 
 
-@Exonmsg((Filters.all & Filters.chat_type.groups), group=USERS_GROUP)
+@Zenmsg((Filters.all & Filters.chat_type.groups), group=USERS_GROUP)
 def log_user(update: Update, context: CallbackContext):
     chat = update.effective_chat
     msg = update.effective_message
@@ -141,7 +141,7 @@ def log_user(update: Update, context: CallbackContext):
         user_db.update_user(msg.forward_from.id, msg.forward_from.username)
 
 
-@Exoncmd(command="groups")
+@Zencmd(command="groups")
 @sudo_plus
 def chats(update: Update, context: CallbackContext):
     all_chats = user_db.get_all_chats() or []
@@ -166,7 +166,7 @@ def chats(update: Update, context: CallbackContext):
         )
 
 
-@Exonmsg((Filters.all & Filters.chat_type.groups), group=CHAT_GROUP)
+@Zenmsg((Filters.all & Filters.chat_type.groups), group=CHAT_GROUP)
 def chat_checker(update: Update, context: CallbackContext):
     bot = context.bot
     try:
@@ -200,7 +200,7 @@ __mod_name__ = "𝐆-ᴄᴀsᴛ"
 
 
 # """
-from Exon.modules.language import gs
+from Zen.modules.language import gs
 
 
 def get_help(chat):

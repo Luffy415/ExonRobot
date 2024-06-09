@@ -33,8 +33,8 @@ import importlib
 from telegram import ParseMode, Update
 from telegram.ext import CallbackContext
 
-from Exon import dispatcher, telethn
-from Exon.__main__ import (
+from Zen import dispatcher, telethn
+from Zen.__main__ import (
     CHAT_SETTINGS,
     DATA_EXPORT,
     DATA_IMPORT,
@@ -45,11 +45,11 @@ from Exon.__main__ import (
     USER_INFO,
     USER_SETTINGS,
 )
-from Exon.modules.helper_funcs.chat_status import dev_plus, sudo_plus
-from Exon.modules.helper_funcs.decorators import Exoncmd
+from Zen.modules.helper_funcs.chat_status import dev_plus, sudo_plus
+from Zen.modules.helper_funcs.decorators import Zencmd
 
 
-@Exoncmd(command="load")
+@Zencmd(command="load")
 @dev_plus
 def load(update: Update, context: CallbackContext):
     message = update.effective_message
@@ -60,7 +60,7 @@ def load(update: Update, context: CallbackContext):
     )
 
     try:
-        imported_module = importlib.import_module(f"Exon.modules.{text}")
+        imported_module = importlib.import_module(f"Zen.modules.{text}")
     except Exception:
         load_messasge.edit_text("Does that module even exist?")
         return
@@ -120,7 +120,7 @@ def load(update: Update, context: CallbackContext):
     )
 
 
-@Exoncmd(command="unload")
+@Zencmd(command="unload")
 @dev_plus
 def unload(update: Update, context: CallbackContext):
     message = update.effective_message
@@ -131,7 +131,7 @@ def unload(update: Update, context: CallbackContext):
     )
 
     try:
-        imported_module = importlib.import_module(f"Exon.modules.{text}")
+        imported_module = importlib.import_module(f"Zen.modules.{text}")
     except Exception:
         unload_messasge.edit_text("Does that module even exist?")
         return
@@ -192,7 +192,7 @@ def unload(update: Update, context: CallbackContext):
     )
 
 
-@Exoncmd(command="listmodules")
+@Zencmd(command="listmodules")
 @sudo_plus
 def listmodules(update: Update, context: CallbackContext):
     message = update.effective_message
@@ -201,7 +201,7 @@ def listmodules(update: Update, context: CallbackContext):
     for helpable_module in HELPABLE:
         helpable_module_info = IMPORTED[helpable_module]
         file_info = IMPORTED[helpable_module_info.__mod_name__.lower()]
-        file_name = file_info.__name__.rsplit("Exon.modules.", 1)[1]
+        file_name = file_info.__name__.rsplit("Zen.modules.", 1)[1]
         mod_name = file_info.__mod_name__
         module_list.append(f"- <code>{mod_name} ({file_name})</code>\n")
     module_list = "Following modules are loaded : \n\n" + "".join(module_list)
@@ -215,7 +215,7 @@ __mod_name__ = "𝐌ᴏᴅᴜʟᴇs"
 
 
 # """
-from Exon.modules.language import gs
+from Zen.modules.language import gs
 
 
 def get_help(chat):

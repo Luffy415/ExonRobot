@@ -33,16 +33,16 @@ from telegram import ParseMode, TelegramError, Update
 from telegram.ext import CallbackContext, CommandHandler, MessageHandler
 from telegram.ext.filters import Filters
 
-import Exon.modules.sql.antilinkedchannel_sql as sql
-from Exon import SUPPORT_CHAT, TOKEN, dispatcher
-from Exon.modules.helper_funcs.anonymous import AdminPerms, user_admin
-from Exon.modules.helper_funcs.chat_status import bot_admin, bot_can_delete
-from Exon.modules.helper_funcs.chat_status import user_admin as u_admin
-from Exon.modules.helper_funcs.decorators import Exoncmd, Exonmsg
-from Exon.modules.sql import acm_sql
+import Zen.modules.sql.antilinkedchannel_sql as sql
+from Zen import SUPPORT_CHAT, TOKEN, dispatcher
+from Zen.modules.helper_funcs.anonymous import AdminPerms, user_admin
+from Zen.modules.helper_funcs.chat_status import bot_admin, bot_can_delete
+from Zen.modules.helper_funcs.chat_status import user_admin as u_admin
+from Zen.modules.helper_funcs.decorators import Zencmd, Zenmsg
+from Zen.modules.sql import acm_sql
 
 
-@Exoncmd(command="antilinkedchan", group=112)
+@Zencmd(command="antilinkedchan", group=112)
 @bot_can_delete
 @user_admin(AdminPerms.CAN_RESTRICT_MEMBERS)
 def set_antilinkedchannel(update: Update, context: CallbackContext):
@@ -74,7 +74,7 @@ def set_antilinkedchannel(update: Update, context: CallbackContext):
     )
 
 
-@Exonmsg(Filters.is_automatic_forward, group=111)
+@Zenmsg(Filters.is_automatic_forward, group=111)
 def eliminate_linked_channel_msg(update: Update, _: CallbackContext):
     message = update.effective_message
     chat = update.effective_chat
@@ -162,7 +162,7 @@ def sfachat(update: Update, context: CallbackContext):
             return ""
 
 
-@Exoncmd(command="antichannelpin", group=114)
+@Zencmd(command="antichannelpin", group=114)
 @bot_admin
 @user_admin(AdminPerms.CAN_RESTRICT_MEMBERS)
 def set_antipinchannel(update: Update, context: CallbackContext):
@@ -192,7 +192,7 @@ def set_antipinchannel(update: Update, context: CallbackContext):
     )
 
 
-@Exonmsg(Filters.is_automatic_forward | Filters.status_update.pinned_message, group=113)
+@Zenmsg(Filters.is_automatic_forward | Filters.status_update.pinned_message, group=113)
 def eliminate_linked_channel_msg(update: Update, _: CallbackContext):
     message = update.effective_message
     chat = update.effective_chat
@@ -235,7 +235,7 @@ __mod_name__ = "𝐀-ᴄʜᴀɴɴᴇʟ"
 # ғᴏʀ ʜᴇʟᴘ ᴍᴇɴᴜ
 
 # """
-from Exon.modules.language import gs
+from Zen.modules.language import gs
 
 
 def get_help(chat):

@@ -31,7 +31,7 @@ import threading
 
 from sqlalchemy import Boolean, Column, String
 
-from Exon.modules.sql import BASE, SESSION
+from Zen.modules.sql import BASE, SESSION
 
 
 class LoggerSettings(BASE):

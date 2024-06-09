@@ -45,23 +45,23 @@ from telegram.error import BadRequest, TelegramError
 from telegram.ext import CallbackContext, Filters
 from telegram.utils.helpers import escape_markdown, mention_html, mention_markdown
 
-import Exon.modules.sql.log_channel_sql as logsql
-import Exon.modules.sql.welcome_sql as sql
-from Exon import DEMONS, DEV_USERS, DRAGONS, LOGGER, OWNER_ID
-from Exon import SUPPORT_CHAT as AbishnoiMF
-from Exon import WOLVES, dispatcher, sw
-from Exon.modules.helper_funcs.anonymous import AdminPerms, user_admin
-from Exon.modules.helper_funcs.chat_status import is_user_ban_protected
-from Exon.modules.helper_funcs.chat_status import user_admin as u_admin
-from Exon.modules.helper_funcs.decorators import Exoncallback, Exoncmd, Exonmsg
-from Exon.modules.helper_funcs.misc import build_keyboard, revert_buttons
-from Exon.modules.helper_funcs.msg_types import get_welcome_type
-from Exon.modules.helper_funcs.string_handling import (
+import Zen.modules.sql.log_channel_sql as logsql
+import Zen.modules.sql.welcome_sql as sql
+from Zen import DEMONS, DEV_USERS, DRAGONS, LOGGER, OWNER_ID
+from Zen import SUPPORT_CHAT as AbishnoiMF
+from Zen import WOLVES, dispatcher, sw
+from Zen.modules.helper_funcs.anonymous import AdminPerms, user_admin
+from Zen.modules.helper_funcs.chat_status import is_user_ban_protected
+from Zen.modules.helper_funcs.chat_status import user_admin as u_admin
+from Zen.modules.helper_funcs.decorators import Zencallback, Zencmd, Zenmsg
+from Zen.modules.helper_funcs.misc import build_keyboard, revert_buttons
+from Zen.modules.helper_funcs.msg_types import get_welcome_type
+from Zen.modules.helper_funcs.string_handling import (
     escape_invalid_curly_brackets,
     markdown_parser,
 )
-from Exon.modules.log_channel import loggable
-from Exon.modules.no_sql.global_bans_db import is_user_gbanned
+from Zen.modules.log_channel import loggable
+from Zen.modules.no_sql.global_bans_db import is_user_gbanned
 
 VALID_WELCOME_FORMATTERS = [
     "first",
@@ -178,7 +178,7 @@ def send(update, message, keyboard, backup_message):
     return msg
 
 
-@Exonmsg((Filters.status_update.new_chat_members), group=WELCOME_GROUP)
+@Zenmsg((Filters.status_update.new_chat_members), group=WELCOME_GROUP)
 @loggable
 def new_member(update: Update, context: CallbackContext):  # sourcery no-metrics
     bot, job_queue = context.bot, context.job_queue
@@ -582,7 +582,7 @@ def check_not_bot(
             )
 
 
-@Exonmsg((Filters.status_update.left_chat_member), group=WELCOME_GROUP)
+@Zenmsg((Filters.status_update.left_chat_member), group=WELCOME_GROUP)
 def left_member(update: Update, context: CallbackContext):  # sourcery no-metrics
     bot = context.bot
     chat = update.effective_chat
@@ -686,7 +686,7 @@ def left_member(update: Update, context: CallbackContext):  # sourcery no-metric
             )
 
 
-@Exoncmd(command="welcome")
+@Zencmd(command="welcome")
 @u_admin
 def welcome(update: Update, context: CallbackContext):
     args = context.args
@@ -754,7 +754,7 @@ def welcome(update: Update, context: CallbackContext):
             )
 
 
-@Exoncmd(command="goodbye")
+@Zencmd(command="goodbye")
 @u_admin
 def goodbye(update: Update, context: CallbackContext):
     args = context.args
@@ -810,7 +810,7 @@ def goodbye(update: Update, context: CallbackContext):
             )
 
 
-@Exoncmd(command="setwelcome")
+@Zencmd(command="setwelcome")
 @user_admin(AdminPerms.CAN_CHANGE_INFO)
 @loggable
 def set_welcome(update: Update, context: CallbackContext) -> str:
@@ -835,7 +835,7 @@ def set_welcome(update: Update, context: CallbackContext) -> str:
     )
 
 
-@Exoncmd(command="resetwelcome")
+@Zencmd(command="resetwelcome")
 @user_admin(AdminPerms.CAN_CHANGE_INFO)
 @loggable
 def reset_welcome(update: Update, context: CallbackContext) -> str:
@@ -857,7 +857,7 @@ def reset_welcome(update: Update, context: CallbackContext) -> str:
     )
 
 
-@Exoncmd(command="setgoodbye")
+@Zencmd(command="setgoodbye")
 @user_admin(AdminPerms.CAN_CHANGE_INFO)
 @loggable
 def set_goodbye(update: Update, context: CallbackContext) -> str:
@@ -880,7 +880,7 @@ def set_goodbye(update: Update, context: CallbackContext) -> str:
     )
 
 
-@Exoncmd(command="resetgoodbye")
+@Zencmd(command="resetgoodbye")
 @user_admin(AdminPerms.CAN_CHANGE_INFO)
 @loggable
 def reset_goodbye(update: Update, context: CallbackContext) -> str:
@@ -902,7 +902,7 @@ def reset_goodbye(update: Update, context: CallbackContext) -> str:
     )
 
 
-@Exoncmd(command="welcomemute")
+@Zencmd(command="welcomemute")
 @user_admin(AdminPerms.CAN_CHANGE_INFO)
 @loggable
 def welcomemute(update: Update, context: CallbackContext) -> str:
@@ -972,7 +972,7 @@ def welcomemute(update: Update, context: CallbackContext) -> str:
         return ""
 
 
-@Exoncmd(command="cleanwelcome")
+@Zencmd(command="cleanwelcome")
 @user_admin(AdminPerms.CAN_CHANGE_INFO)
 @loggable
 def clean_welcome(update: Update, context: CallbackContext) -> str:
@@ -1014,7 +1014,7 @@ def clean_welcome(update: Update, context: CallbackContext) -> str:
         return ""
 
 
-@Exoncmd(command="cleanservice")
+@Zencmd(command="cleanservice")
 @user_admin(AdminPerms.CAN_CHANGE_INFO)
 def cleanservice(update: Update, context: CallbackContext) -> str:
     args = context.args
@@ -1047,7 +1047,7 @@ def cleanservice(update: Update, context: CallbackContext) -> str:
         )
 
 
-@Exoncallback(pattern=r"user_join_")
+@Zencallback(pattern=r"user_join_")
 def user_button(update: Update, context: CallbackContext):
     chat = update.effective_chat
     user = update.effective_user
@@ -1110,7 +1110,7 @@ def user_button(update: Update, context: CallbackContext):
         query.answer(text="You're not allowed to do this!")
 
 
-@Exoncallback(pattern=r"user_captchajoin_\([\d\-]+,\d+\)_\(\d{4}\)")
+@Zencallback(pattern=r"user_captchajoin_\([\d\-]+,\d+\)_\(\d{4}\)")
 def user_captcha_button(update: Update, context: CallbackContext):
     # sourcery no-metrics
     chat = update.effective_chat
@@ -1194,7 +1194,7 @@ def user_captcha_button(update: Update, context: CallbackContext):
 
 
 """
-@Exoncmd(command="lockgroup", pass_args=True)
+@Zencmd(command="lockgroup", pass_args=True)
 @u_admin(AdminPerms.CAN_CHANGE_INFO)
 def setDefense(update: Update, context: CallbackContext):
 
@@ -1268,13 +1268,13 @@ WELC_MUTE_HELP_TXT = (
 )
 
 
-@Exoncmd(command="welcomehelp")
+@Zencmd(command="welcomehelp")
 @u_admin
 def welcome_help(update: Update, context: CallbackContext):
     update.effective_message.reply_text(WELC_HELP_TXT, parse_mode=ParseMode.MARKDOWN)
 
 
-@Exoncmd(command="welcomemutehelp")
+@Zencmd(command="welcomemutehelp")
 @u_admin
 def welcome_mute_help(update: Update, context: CallbackContext):
     update.effective_message.reply_text(
@@ -1305,7 +1305,7 @@ def __chat_settings__(chat_id, user_id):
 
 
 # ғᴏʀ ʜᴇʟᴘ ᴍᴇɴᴜ
-from Exon.modules.language import gs
+from Zen.modules.language import gs
 
 
 def wlc_m_help(update: Update, context: CallbackContext):
@@ -1322,7 +1322,7 @@ def wlc_fill_help(update: Update, context: CallbackContext):
     )
 
 
-@Exoncallback(pattern=r"wlc_help_")
+@Zencallback(pattern=r"wlc_help_")
 def fmt_help(update: Update, context: CallbackContext):
     query = update.callback_query
     bot = context.bot

@@ -28,7 +28,7 @@ SOFTWARE.
 #     GITHUB :- Abishnoi69 ""
 
 
-from Exon.modules.no_sql import get_collection
+from Zen.modules.no_sql import get_collection
 
 DISABLED_COMMANDS = get_collection("DISABLED_COMMANDS")
 

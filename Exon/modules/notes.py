@@ -49,14 +49,14 @@ from telegram.ext import (
 )
 from telegram.utils.helpers import escape_markdown, mention_markdown
 
-import Exon.modules.sql.notes_sql as sql
-from Exon import DRAGONS, JOIN_LOGGER, LOGGER, SUPPORT_CHAT, dispatcher
-from Exon.modules.disable import DisableAbleCommandHandler
-from Exon.modules.helper_funcs.chat_status import connection_status, user_admin
-from Exon.modules.helper_funcs.handlers import MessageHandlerChecker
-from Exon.modules.helper_funcs.misc import build_keyboard, revert_buttons
-from Exon.modules.helper_funcs.msg_types import get_note_type
-from Exon.modules.helper_funcs.string_handling import escape_invalid_curly_brackets
+import Zen.modules.sql.notes_sql as sql
+from Zen import DRAGONS, JOIN_LOGGER, LOGGER, SUPPORT_CHAT, dispatcher
+from Zen.modules.disable import DisableAbleCommandHandler
+from Zen.modules.helper_funcs.chat_status import connection_status, user_admin
+from Zen.modules.helper_funcs.handlers import MessageHandlerChecker
+from Zen.modules.helper_funcs.misc import build_keyboard, revert_buttons
+from Zen.modules.helper_funcs.msg_types import get_note_type
+from Zen.modules.helper_funcs.string_handling import escape_invalid_curly_brackets
 
 FILE_MATCHER = re.compile(r"^###file_id(!photo)?###:(.*?)(?:\s|$)")
 STICKER_MATCHER = re.compile(r"^###sticker(!photo)?###:")
@@ -597,7 +597,7 @@ dispatcher.add_handler(CLEARALL_BTN)
 
 
 # """
-from Exon.modules.language import gs
+from Zen.modules.language import gs
 
 
 def get_help(chat):

@@ -35,11 +35,11 @@ from pyrogram.types import InlineKeyboardButton, InlineKeyboardMarkup
 from telegram import InlineKeyboardButton, InlineKeyboardMarkup, ParseMode, Update
 from telegram.ext import CallbackContext
 
-from Exon import Abishnoi as Exon
-from Exon import StartTime, dispatcher
-from Exon.modules.disable import DisableAbleCommandHandler
-from Exon.modules.helper_funcs.chat_status import sudo_plus
-from Exon.modules.stats import bot_sys_stats as nagisa
+from Zen import Abishnoi as Zen
+from Zen import StartTime, dispatcher
+from Zen.modules.disable import DisableAbleCommandHandler
+from Zen.modules.helper_funcs.chat_status import sudo_plus
+from Zen.modules.stats import bot_sys_stats as nagisa
 
 sites_list = {
     "Telegram": "https://api.telegram.org",
@@ -123,10 +123,10 @@ def ping(update: Update, context: CallbackContext):
     )
 
 
-@Exon.on_callback_query(filters.regex("stats_callback"))
+@Zen.on_callback_query(filters.regex("stats_callback"))
 async def stats_callback(_, CallbackQuery):
     text = await nagisa()
-    await Exon.answer_callback_query(CallbackQuery.id, text, show_alert=True)
+    await Zen.answer_callback_query(CallbackQuery.id, text, show_alert=True)
 
 
 @sudo_plus
@@ -162,7 +162,7 @@ __mod_name__ = "𝐏ɪɴɢ"
 
 
 # """
-from Exon.modules.language import gs
+from Zen.modules.language import gs
 
 
 def get_help(chat):

@@ -29,8 +29,8 @@ from enum import Enum
 from telegram import InlineKeyboardButton, InlineKeyboardMarkup, ParseMode, Update
 from telegram.ext import CallbackContext
 
-from Exon import DEV_USERS, DRAGONS, dispatcher
-from Exon.modules.helper_funcs.decorators import Exoncallback
+from Zen import DEV_USERS, DRAGONS, dispatcher
+from Zen.modules.helper_funcs.decorators import Zencallback
 
 
 class AdminPerms(Enum):
@@ -106,7 +106,7 @@ def user_admin(permission: AdminPerms):
     return wrapper
 
 
-@Exoncallback(pattern="anoncb")
+@Zencallback(pattern="anoncb")
 def anon_callback_handler1(upd: Update, _: CallbackContext):
     callback = upd.callback_query
     perm = callback.data.split("/")[3]

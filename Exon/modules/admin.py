@@ -43,12 +43,12 @@ from telethon import events
 from telethon.tl import *
 from telethon.tl import functions, types
 
-from Exon import Abishnoi, dispatcher
-from Exon import telethn as bot
-from Exon.modules.connection import connected
-from Exon.modules.disable import DisableAbleCommandHandler
-from Exon.modules.helper_funcs.alternate import typing_action
-from Exon.modules.helper_funcs.chat_status import (
+from Zen import Abishnoi, dispatcher
+from Zen import telethn as bot
+from Zen.modules.connection import connected
+from Zen.modules.disable import DisableAbleCommandHandler
+from Zen.modules.helper_funcs.alternate import typing_action
+from Zen.modules.helper_funcs.chat_status import (
     ADMIN_CACHE,
     bot_admin,
     can_pin,
@@ -58,8 +58,8 @@ from Exon.modules.helper_funcs.chat_status import (
     user_can_changeinfo,
     user_can_promote,
 )
-from Exon.modules.helper_funcs.extraction import extract_user, extract_user_and_text
-from Exon.modules.log_channel import loggable
+from Zen.modules.helper_funcs.extraction import extract_user, extract_user_and_text
+from Zen.modules.log_channel import loggable
 
 
 async def is_register_admin(chat, user):
@@ -1013,7 +1013,7 @@ __handlers__ = [
 # ғᴏʀ ʜᴇʟᴘ ᴍᴇɴᴜ
 
 # """
-from Exon.modules.language import gs
+from Zen.modules.language import gs
 
 
 def get_help(chat):

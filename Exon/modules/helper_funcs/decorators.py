@@ -33,12 +33,12 @@ from telegram.ext import (
 )
 from telegram.ext.filters import MessageFilter
 
-from Exon import LOGGER
-from Exon import dispatcher as n
-from Exon.modules.disable import DisableAbleCommandHandler, DisableAbleMessageHandler
+from Zen import LOGGER
+from Zen import dispatcher as n
+from Zen.modules.disable import DisableAbleCommandHandler, DisableAbleMessageHandler
 
 
-class ExonTelegramHandler:
+class ZenTelegramHandler:
     def __init__(self, n):
         self._dispatcher = n
 
@@ -79,7 +79,7 @@ class ExonTelegramHandler:
                         group,
                     )
                 LOGGER.debug(
-                    f"[ExonCMD] Loaded handler {command} for function {func.__name__} in group {group}"
+                    f"[ZenCMD] Loaded handler {command} for function {func.__name__} in group {group}"
                 )
             except TypeError:
                 if can_disable:
@@ -106,7 +106,7 @@ class ExonTelegramHandler:
                         )
                     )
                 LOGGER.debug(
-                    f"[ExonCMD] Loaded handler {command} for function {func.__name__}"
+                    f"[ZenCMD] Loaded handler {command} for function {func.__name__}"
                 )
 
             return func
@@ -135,7 +135,7 @@ class ExonTelegramHandler:
                         MessageHandler(pattern, func, run_async=run_async), group
                     )
                 LOGGER.debug(
-                    f"[ExonMSG] Loaded filter pattern {pattern} for function {func.__name__} in group {group}"
+                    f"[ZenMSG] Loaded filter pattern {pattern} for function {func.__name__} in group {group}"
                 )
             except TypeError:
                 if can_disable:
@@ -149,7 +149,7 @@ class ExonTelegramHandler:
                         MessageHandler(pattern, func, run_async=run_async)
                     )
                 LOGGER.debug(
-                    f"[ExonMSG] Loaded filter pattern {pattern} for function {func.__name__}"
+                    f"[ZenMSG] Loaded filter pattern {pattern} for function {func.__name__}"
                 )
 
             return func
@@ -164,7 +164,7 @@ class ExonTelegramHandler:
                 )
             )
             LOGGER.debug(
-                f"[ExonCALLBACK] Loaded callbackquery handler with pattern {pattern} for function {func.__name__}"
+                f"[ZenCALLBACK] Loaded callbackquery handler with pattern {pattern} for function {func.__name__}"
             )
             return func
 
@@ -190,7 +190,7 @@ class ExonTelegramHandler:
                 )
             )
             LOGGER.debug(
-                f"[ExonINLINE] Loaded inlinequery handler with pattern {pattern} for function {func.__name__} | PASSES "
+                f"[ZenINLINE] Loaded inlinequery handler with pattern {pattern} for function {func.__name__} | PASSES "
                 f"USER DATA: {pass_user_data} | PASSES CHAT DATA: {pass_chat_data} | CHAT TYPES: {chat_types}"
             )
             return func
@@ -198,7 +198,7 @@ class ExonTelegramHandler:
         return _inlinequery
 
 
-Exoncmd = ExonTelegramHandler(n).command
-Exonmsg = ExonTelegramHandler(n).message
-Exoncallback = ExonTelegramHandler(n).callbackquery
-Exoninline = ExonTelegramHandler(n).inlinequery
+Zencmd = ZenTelegramHandler(n).command
+Zenmsg = ZenTelegramHandler(n).message
+Zencallback = ZenTelegramHandler(n).callbackquery
+Zeninline = ZenTelegramHandler(n).inlinequery

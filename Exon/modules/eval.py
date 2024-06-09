@@ -44,10 +44,10 @@ from pyrogram.types import InlineKeyboardButton, InlineKeyboardMarkup, Message
 from telegram import ParseMode, Update
 from telegram.ext import CallbackContext, CommandHandler
 
-from Exon import DEV_USERS, LOGGER
-from Exon import Abishnoi as app
-from Exon import dispatcher
-from Exon.modules.helper_funcs.chat_status import dev_plus
+from Zen import DEV_USERS, LOGGER
+from Zen import Abishnoi as app
+from Zen import dispatcher
+from Zen.modules.helper_funcs.chat_status import dev_plus
 
 namespaces = {}
 
@@ -118,7 +118,7 @@ def do(func, bot, update):
     env = namespace_of(update.message.chat_id, update, bot)
     os.chdir(os.getcwd())
     with open(
-        os.path.join(os.getcwd(), "Exon/modules/helper_funcs/temp.txt"),
+        os.path.join(os.getcwd(), "Zen/modules/helper_funcs/temp.txt"),
         "w",
     ) as temp:
         temp.write(body)

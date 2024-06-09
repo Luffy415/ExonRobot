@@ -31,7 +31,7 @@ import threading
 from sqlalchemy import Column, String
 from sqlalchemy.sql.sqltypes import BigInteger
 
-from Exon.modules.sql import BASE, SESSION
+from Zen.modules.sql import BASE, SESSION
 
 
 class Approvals(BASE):

@@ -32,13 +32,13 @@ from telethon.errors import ChatAdminRequiredError
 from telethon.errors.rpcerrorlist import UserNotParticipantError
 from telethon.tl.functions.channels import GetParticipantRequest
 
-from Exon import BOT_ID
-from Exon import DRAGONS as DEVS
-from Exon import OWNER_ID
-from Exon import telethn as Rani
-from Exon.events import Asuinline
-from Exon.events import register as Asubot
-from Exon.modules.no_sql import fsub_db as db
+from Zen import BOT_ID
+from Zen import DRAGONS as DEVS
+from Zen import OWNER_ID
+from Zen import telethn as Rani
+from Zen.events import Asuinline
+from Zen.events import register as Asubot
+from Zen.modules.no_sql import fsub_db as db
 
 
 async def is_admin(chat_id, user_id):
@@ -175,7 +175,7 @@ __mod_name__ = "𝐅-sᴜʙ"
 # ғᴏʀ ʜᴇʟᴘ ᴍᴇɴᴜ
 
 # """
-from Exon.modules.language import gs
+from Zen.modules.language import gs
 
 
 def get_help(chat):

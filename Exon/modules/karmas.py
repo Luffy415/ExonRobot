@@ -32,9 +32,9 @@ import asyncio
 
 from pyrogram import filters
 
-from Exon import OWNER_ID
-from Exon import Abishnoi as abishnoi
-from Exon.modules.no_sql.karma_db import (
+from Zen import OWNER_ID
+from Zen import Abishnoi as abishnoi
+from Zen.modules.no_sql.karma_db import (
     alpha_to_int,
     get_karma,
     get_karmas,

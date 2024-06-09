@@ -30,8 +30,8 @@ import threading
 
 from sqlalchemy import Boolean, Column, Integer, String, UnicodeText, distinct, func
 
-from Exon.modules.helper_funcs.msg_types import Types
-from Exon.modules.sql import BASE, SESSION
+from Zen.modules.helper_funcs.msg_types import Types
+from Zen.modules.sql import BASE, SESSION
 
 
 class Notes(BASE):

@@ -27,7 +27,7 @@ SOFTWARE.
 #     TG  :- Abishnoi_bots
 #     GITHUB :- Abishnoi69 ""
 
-from Exon.modules.no_sql import get_collection
+from Zen.modules.no_sql import get_collection
 
 BL = get_collection("BLACKLIST")
 BL_SETTING = get_collection("BLACKLIST_SETTINGS")

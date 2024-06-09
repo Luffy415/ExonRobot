@@ -35,7 +35,7 @@ from telethon.errors import UserNotParticipantError
 from telethon.tl.functions.channels import GetParticipantRequest
 from telethon.tl.types import ChannelParticipantAdmin, ChannelParticipantCreator
 
-from Exon import telethn as abishnoi
+from Zen import telethn as abishnoi
 
 spam_chats = []
 
@@ -47,8 +47,8 @@ import dateparser
 from pyrogram import filters
 from pyrogram.types import ChatPermissions, InlineKeyboardButton, InlineKeyboardMarkup
 
-from Exon import Abishnoi as AsuX
-from Exon.modules.no_sql import AsuXdb as db
+from Zen import Abishnoi as AsuX
+from Zen.modules.no_sql import AsuXdb as db
 
 approved_users = db.approve
 tagdb = db.tagdb1
@@ -422,7 +422,7 @@ async def cancel_spam(event):
 
 __mod_name__ = "𝐓ᴀɢ-Aʟʟ"
 
-from Exon.modules.language import gs
+from Zen.modules.language import gs
 
 
 def get_help(chat):

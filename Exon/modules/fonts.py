@@ -30,8 +30,8 @@ SOFTWARE.
 
 from pyrogram.types import InlineKeyboardButton, InlineKeyboardMarkup
 
-from Exon import Abishnoi as abishnoi
-from Exon.modules.resources.fonts import Fonts
+from Zen import Abishnoi as abishnoi
+from Zen.modules.resources.fonts import Fonts
 
 
 @abishnoi.on_cmd(["font", "fonts"])

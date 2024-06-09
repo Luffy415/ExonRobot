@@ -35,19 +35,19 @@ from telegram.error import BadRequest
 from telegram.ext import CallbackContext, Filters
 from telegram.utils.helpers import mention_html
 
-import Exon.modules.sql.locks_sql as sql
-from Exon import LOGGER as log
-from Exon import dispatcher
-from Exon.modules.connection import connected
-from Exon.modules.helper_funcs.alternate import send_message, typing_action
-from Exon.modules.helper_funcs.anonymous import AdminPerms, user_admin
-from Exon.modules.helper_funcs.chat_status import can_delete, is_bot_admin
-from Exon.modules.helper_funcs.chat_status import user_admin as u_admin
-from Exon.modules.helper_funcs.chat_status import user_not_admin
-from Exon.modules.helper_funcs.decorators import Exoncmd as natsunagicmd
-from Exon.modules.helper_funcs.decorators import Exonmsg as natsunagimsg
-from Exon.modules.log_channel import loggable
-from Exon.modules.sql.approve_sql import is_approved
+import Zen.modules.sql.locks_sql as sql
+from Zen import LOGGER as log
+from Zen import dispatcher
+from Zen.modules.connection import connected
+from Zen.modules.helper_funcs.alternate import send_message, typing_action
+from Zen.modules.helper_funcs.anonymous import AdminPerms, user_admin
+from Zen.modules.helper_funcs.chat_status import can_delete, is_bot_admin
+from Zen.modules.helper_funcs.chat_status import user_admin as u_admin
+from Zen.modules.helper_funcs.chat_status import user_not_admin
+from Zen.modules.helper_funcs.decorators import Zencmd as natsunagicmd
+from Zen.modules.helper_funcs.decorators import Zenmsg as natsunagimsg
+from Zen.modules.log_channel import loggable
+from Zen.modules.sql.approve_sql import is_approved
 
 ad = AlphabetDetector()
 
@@ -570,7 +570,7 @@ __mod_name__ = "𝐋ᴏᴄᴋs"
 
 
 # """
-from Exon.modules.language import gs
+from Zen.modules.language import gs
 
 
 def get_help(chat):

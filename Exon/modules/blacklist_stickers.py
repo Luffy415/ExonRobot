@@ -34,17 +34,17 @@ from telegram.error import BadRequest
 from telegram.ext import CallbackContext, CommandHandler, Filters, MessageHandler
 from telegram.utils.helpers import mention_html, mention_markdown
 
-import Exon.modules.sql.blsticker_sql as sql
-from Exon import LOGGER, dispatcher
-from Exon.modules.connection import connected
-from Exon.modules.disable import DisableAbleCommandHandler
-from Exon.modules.helper_funcs.alternate import send_message
-from Exon.modules.helper_funcs.chat_status import user_admin, user_not_admin
-from Exon.modules.helper_funcs.misc import split_message
-from Exon.modules.helper_funcs.string_handling import extract_time
-from Exon.modules.log_channel import loggable
-from Exon.modules.sql.approve_sql import is_approved
-from Exon.modules.warns import warn
+import Zen.modules.sql.blsticker_sql as sql
+from Zen import LOGGER, dispatcher
+from Zen.modules.connection import connected
+from Zen.modules.disable import DisableAbleCommandHandler
+from Zen.modules.helper_funcs.alternate import send_message
+from Zen.modules.helper_funcs.chat_status import user_admin, user_not_admin
+from Zen.modules.helper_funcs.misc import split_message
+from Zen.modules.helper_funcs.string_handling import extract_time
+from Zen.modules.log_channel import loggable
+from Zen.modules.sql.approve_sql import is_approved
+from Zen.modules.warns import warn
 
 
 def blackliststicker(update: Update, context: CallbackContext):

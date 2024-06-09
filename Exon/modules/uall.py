@@ -44,9 +44,9 @@ from telethon.tl.types import (
     ChatBannedRights,
 )
 
-from Exon import *
-from Exon import LOGGER
-from Exon.events import register
+from Zen import *
+from Zen import LOGGER
+from Zen.events import register
 
 CMD_HELP = "/ !"
 
@@ -67,7 +67,7 @@ async def is_register_admin(chat, user):
 
 
 @register(pattern="^/unbanall$")
-@register(pattern="^/unbanall@Exon_Robot$")
+@register(pattern="^/unbanall@Zen_Robot$")
 async def _(event):
     chat = await event.get_chat()
     admin = chat.admin_rights.ban_users
@@ -123,7 +123,7 @@ async def _(event):
     await event.reply(required_string.format(p))
 
 
-@register(pattern="^/unmuteall@Exon_Robot$")
+@register(pattern="^/unmuteall@Zen_Robot$")
 @register(pattern="^/unmuteall$")
 async def _(event):
     if event.is_private:
@@ -217,7 +217,7 @@ __mod_name__ = "𝐔ᴀʟʟ"
 # ғᴏʀ ʜᴇʟᴘ ᴍᴇɴᴜ
 
 # """
-from Exon.modules.language import gs
+from Zen.modules.language import gs
 
 
 def get_help(chat):

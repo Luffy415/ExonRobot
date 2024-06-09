@@ -33,8 +33,8 @@ import time
 from Abg.helpers.human_read import get_readable_time
 from pyrogram.types import Message
 
-from Exon import Abishnoi
-from Exon.modules.no_sql.afk_db import add_afk, is_afk, remove_afk
+from Zen import Abishnoi
+from Zen.modules.no_sql.afk_db import add_afk, is_afk, remove_afk
 
 
 @Abishnoi.on_cmd(["afk", "brb"])
@@ -202,7 +202,7 @@ __mod_name__ = "𝐀ғᴋ"
 # ғᴏʀ ʜᴇʟᴘ ᴍᴇɴᴜ
 
 # """
-from Exon.modules.language import gs
+from Zen.modules.language import gs
 
 
 def get_help(chat):

@@ -31,7 +31,7 @@ import threading
 
 from sqlalchemy import Boolean, Column, UnicodeText
 
-from Exon.modules.sql import BASE, SESSION
+from Zen.modules.sql import BASE, SESSION
 
 
 class CleanerBlueTextChatSettings(BASE):

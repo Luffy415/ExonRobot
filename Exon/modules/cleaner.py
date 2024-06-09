@@ -32,15 +32,15 @@ import html
 from telegram import ParseMode, Update
 from telegram.ext import CallbackContext, CommandHandler, Filters, MessageHandler
 
-from Exon import ALLOW_EXCL, CustomCommandHandler, dispatcher
-from Exon.modules.disable import DisableAbleCommandHandler
-from Exon.modules.helper_funcs.chat_status import (
+from Zen import ALLOW_EXCL, CustomCommandHandler, dispatcher
+from Zen.modules.disable import DisableAbleCommandHandler
+from Zen.modules.helper_funcs.chat_status import (
     bot_can_delete,
     connection_status,
     dev_plus,
     user_admin,
 )
-from Exon.modules.sql import cleaner_sql as sql
+from Zen.modules.sql import cleaner_sql as sql
 
 CMD_STARTERS = ("/", "!") if ALLOW_EXCL else "/"
 BLUE_TEXT_CLEAN_GROUP = 13
@@ -265,7 +265,7 @@ __handlers__ = [
 
 
 # """
-from Exon.modules.language import gs
+from Zen.modules.language import gs
 
 
 def get_help(chat):

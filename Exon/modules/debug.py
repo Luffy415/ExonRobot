@@ -33,8 +33,8 @@ from telegram import Update
 from telegram.ext import CallbackContext, CommandHandler
 from telethon import events
 
-from Exon import dispatcher, telethn
-from Exon.modules.helper_funcs.chat_status import dev_plus
+from Zen import dispatcher, telethn
+from Zen.modules.helper_funcs.chat_status import dev_plus
 
 DEBUG_MODE = False
 
@@ -101,7 +101,7 @@ __handlers__ = [DEBUG_HANDLER]
 
 
 # """
-from Exon.modules.language import gs
+from Zen.modules.language import gs
 
 
 def get_help(chat):

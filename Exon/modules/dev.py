@@ -48,10 +48,10 @@ from telegram.ext import CallbackContext, CommandHandler
 from telegram.ext.callbackqueryhandler import CallbackQueryHandler
 from telethon import events
 
-from Exon import DEV_USERS, OWNER_ID, dispatcher, telethn, updater
-from Exon.modules.helper_funcs.alternate import typing_action
-from Exon.modules.helper_funcs.chat_status import dev_plus
-from Exon.modules.helper_funcs.filters import CustomFilters
+from Zen import DEV_USERS, OWNER_ID, dispatcher, telethn, updater
+from Zen.modules.helper_funcs.alternate import typing_action
+from Zen.modules.helper_funcs.chat_status import dev_plus
+from Zen.modules.helper_funcs.filters import CustomFilters
 
 
 def leave_cb(update: Update, context: CallbackContext):
@@ -71,13 +71,13 @@ def leave_cb(update: Update, context: CallbackContext):
 def allow_groups(update: Update, context: CallbackContext):
     args = context.args
     if not args:
-        state = "off" if Exon.ALLOW_CHATS else "Lockdown is " + "on"
+        state = "off" if Zen.ALLOW_CHATS else "Lockdown is " + "on"
         update.effective_message.reply_text(f"Current state: {state}")
         return
     if args[0].lower() in ["off", "no"]:
-        Exon.ALLOW_CHATS = True
+        Zen.ALLOW_CHATS = True
     elif args[0].lower() in ["yes", "on"]:
-        Exon.ALLOW_CHATS = False
+        Zen.ALLOW_CHATS = False
     else:
         update.effective_message.reply_text("Format: /lockdown Yes/No or Off/On")
         return
@@ -125,7 +125,7 @@ telethn.add_event_handler(callback_queries, events.CallbackQuery())
 @telethn.on(events.NewMessage(pattern=r"/getstats", from_users=OWNER_ID))
 async def getstats(event):
     await event.reply(
-        f"Exon Event Statistics\n"
+        f"Zen Event Statistics\n"
         f"» Average messages: <code>{messages.average()}<code>/s\n"
         f"» Average Callback Queries: <code>{callback_queries.average()}<code>/s\n"
         f"» Average Inline Queries: <code>{inline_queries.average()}<code>/s",
@@ -173,7 +173,7 @@ def leave(update: Update, context: CallbackContext):
     else:
         chat = update.effective_chat
         # user = update.effective_user
-        Exon_leave_bt = [
+        Zen_leave_bt = [
             [
                 InlineKeyboardButton(
                     text="Yes", callback_data=f"leavechat_cb_({chat.id})"
@@ -183,7 +183,7 @@ def leave(update: Update, context: CallbackContext):
         ]
         update.effective_message.reply_text(
             f"I'm going to leave {chat.title}, press the button below to confirm",
-            reply_markup=InlineKeyboardMarkup(Exon_leave_bt),
+            reply_markup=InlineKeyboardMarkup(Zen_leave_bt),
         )
 
 
@@ -251,7 +251,7 @@ __handlers__ = [
 # ғᴏʀ ʜᴇʟᴘ ᴍᴇɴᴜ
 
 # """
-from Exon.modules.language import gs
+from Zen.modules.language import gs
 
 
 def get_help(chat):

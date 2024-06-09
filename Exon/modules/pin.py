@@ -4,9 +4,9 @@ from pyrogram import filters
 from pyrogram.errors import ChatAdminRequired, RightForbidden, RPCError
 from pyrogram.types import InlineKeyboardButton, InlineKeyboardMarkup, Message
 
-from Exon import Abishnoi
-from Exon.modules.no_sql import AsuXdb as db
-from Exon.utils.pluginhelp import member_permissions
+from Zen import Abishnoi
+from Zen.modules.no_sql import AsuXdb as db
+from Zen.utils.pluginhelp import member_permissions
 
 BTN_URL_REGEX = compile(r"(\[([^\[]+?)\]\(buttonurl:(?:/{0,2})(.+?)(:same)?\))")
 
@@ -394,7 +394,7 @@ __mod_name__ = "𝐏ɪɴs"
 
 
 # """
-from Exon.modules.language import gs
+from Zen.modules.language import gs
 
 
 def get_help(chat):

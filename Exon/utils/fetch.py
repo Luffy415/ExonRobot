@@ -23,7 +23,7 @@ SOFTWARE.
 """
 
 
-from Exon import aiohttpsession
+from Zen import aiohttpsession
 
 headers = {
     "Accept": "application/json",

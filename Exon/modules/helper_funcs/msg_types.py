@@ -25,7 +25,7 @@ from enum import IntEnum, unique
 
 from telegram import Message
 
-from Exon.modules.helper_funcs.string_handling import button_markdown_parser
+from Zen.modules.helper_funcs.string_handling import button_markdown_parser
 
 
 @unique

@@ -29,8 +29,8 @@ SOFTWARE.
 
 """Users Database."""
 
-from Exon import dispatcher
-from Exon.modules.no_sql import get_collection
+from Zen import dispatcher
+from Zen.modules.no_sql import get_collection
 
 USERS_DB = get_collection("users")
 CHATS_DB = get_collection("chats")

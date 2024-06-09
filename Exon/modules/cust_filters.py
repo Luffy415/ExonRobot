@@ -41,23 +41,23 @@ from telegram.ext import (
 )
 from telegram.utils.helpers import escape_markdown, mention_html
 
-from Exon import DRAGONS, LOGGER, dispatcher
-from Exon.modules.connection import connected
-from Exon.modules.disable import DisableAbleCommandHandler
-from Exon.modules.helper_funcs.alternate import send_message, typing_action
-from Exon.modules.helper_funcs.chat_status import user_admin
-from Exon.modules.helper_funcs.extraction import extract_text
-from Exon.modules.helper_funcs.filters import CustomFilters
-from Exon.modules.helper_funcs.handlers import MessageHandlerChecker
-from Exon.modules.helper_funcs.misc import build_keyboard_parser
-from Exon.modules.helper_funcs.msg_types import get_filter_type
-from Exon.modules.helper_funcs.string_handling import (
+from Zen import DRAGONS, LOGGER, dispatcher
+from Zen.modules.connection import connected
+from Zen.modules.disable import DisableAbleCommandHandler
+from Zen.modules.helper_funcs.alternate import send_message, typing_action
+from Zen.modules.helper_funcs.chat_status import user_admin
+from Zen.modules.helper_funcs.extraction import extract_text
+from Zen.modules.helper_funcs.filters import CustomFilters
+from Zen.modules.helper_funcs.handlers import MessageHandlerChecker
+from Zen.modules.helper_funcs.misc import build_keyboard_parser
+from Zen.modules.helper_funcs.msg_types import get_filter_type
+from Zen.modules.helper_funcs.string_handling import (
     button_markdown_parser,
     escape_invalid_curly_brackets,
     markdown_to_html,
     split_quotes,
 )
-from Exon.modules.sql import cust_filters_sql as sql
+from Zen.modules.sql import cust_filters_sql as sql
 
 HANDLER_GROUP = 10
 
@@ -646,7 +646,7 @@ __handlers__ = [
 
 
 # """
-from Exon.modules.language import gs
+from Zen.modules.language import gs
 
 
 def get_help(chat):

@@ -32,7 +32,7 @@ from pyrogram.enums import ChatType
 from pyrogram.errors import MessageDeleteForbidden, RPCError
 from pyrogram.types import Message
 
-from Exon import LOGGER, Abishnoi
+from Zen import LOGGER, Abishnoi
 
 
 @Abishnoi.on_cmd("purge")
@@ -143,7 +143,7 @@ __mod_name__ = "𝐏ᴜʀɢᴇ"
 
 
 # """
-from Exon.modules.language import gs
+from Zen.modules.language import gs
 
 
 def get_help(chat):

@@ -32,7 +32,7 @@ from pyrogram import filters
 from telegram import Chat, ChatMember, ParseMode, TelegramError, Update, User
 from telegram.ext import CallbackContext
 
-from Exon import (
+from Zen import (
     DEL_CMDS,
     DEMONS,
     DEV_USERS,
@@ -616,6 +616,6 @@ def check_perms(update: Update, type: str):
 
 
 # Workaround for circular import with connection.py
-from Exon.modules import connection
+from Zen.modules import connection
 
 connected = connection.connected

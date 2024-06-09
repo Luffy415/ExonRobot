@@ -36,8 +36,8 @@ from pyrogram import Client
 from pyrogram.errors import FloodWait, MessageNotModified
 from pyrogram.types import Chat, Message, User
 
-from Exon import OWNER_ID, SUPPORT_CHAT, Abishnoi
-from Exon.utils.errors import split_limits
+from Zen import OWNER_ID, SUPPORT_CHAT, Abishnoi
+from Zen.utils.errors import split_limits
 
 
 def get_user(message: Message, text: str) -> [int, str, None]:

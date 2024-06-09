@@ -25,7 +25,7 @@ SOFTWARE.
 from pykeyboard import InlineKeyboard
 from pyrogram.types import InlineKeyboardButton as Ikb
 
-from Exon.utils.functions import get_urls_from_text as is_url
+from Zen.utils.functions import get_urls_from_text as is_url
 
 
 def keyboard(buttons_list, row_width: int = 2):

@@ -1,6 +1,6 @@
 FROM python:3.10.11
 
-WORKDIR /root/Exon
+WORKDIR /root/Zen
 
 COPY . .
 

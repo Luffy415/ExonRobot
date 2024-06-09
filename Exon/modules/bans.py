@@ -41,7 +41,7 @@ from telegram.error import BadRequest
 from telegram.ext import CallbackContext, CallbackQueryHandler, CommandHandler, Filters
 from telegram.utils.helpers import mention_html
 
-from Exon import (
+from Zen import (
     DEMONS,
     DEV_USERS,
     DRAGONS,
@@ -51,9 +51,9 @@ from Exon import (
     WOLVES,
     dispatcher,
 )
-from Exon.modules.disable import DisableAbleCommandHandler
-from Exon.modules.helper_funcs.anonymous import AdminPerms, user_admin
-from Exon.modules.helper_funcs.chat_status import (
+from Zen.modules.disable import DisableAbleCommandHandler
+from Zen.modules.helper_funcs.anonymous import AdminPerms, user_admin
+from Zen.modules.helper_funcs.chat_status import (
     bot_admin,
     can_delete,
     can_restrict,
@@ -63,15 +63,15 @@ from Exon.modules.helper_funcs.chat_status import (
     is_user_ban_protected,
     is_user_in_chat,
 )
-from Exon.modules.helper_funcs.chat_status import user_admin as u_admin
-from Exon.modules.helper_funcs.chat_status import user_admin_no_reply, user_can_ban
-from Exon.modules.helper_funcs.extraction import extract_user_and_text
-from Exon.modules.helper_funcs.filters import CustomFilters
-from Exon.modules.helper_funcs.string_handling import extract_time
-from Exon.modules.log_channel import gloggable, loggable
+from Zen.modules.helper_funcs.chat_status import user_admin as u_admin
+from Zen.modules.helper_funcs.chat_status import user_admin_no_reply, user_can_ban
+from Zen.modules.helper_funcs.extraction import extract_user_and_text
+from Zen.modules.helper_funcs.filters import CustomFilters
+from Zen.modules.helper_funcs.string_handling import extract_time
+from Zen.modules.log_channel import gloggable, loggable
 
 
-# @Exoncmd(command=["ban", "sban", "dban"], pass_args=True)
+# @Zencmd(command=["ban", "sban", "dban"], pass_args=True)
 @connection_status
 @bot_admin
 @can_restrict

@@ -33,8 +33,8 @@ from sqlalchemy import Boolean, Column, Integer, String, UnicodeText
 from sqlalchemy.sql.sqltypes import BigInteger
 from telegram.error import BadRequest, Unauthorized
 
-from Exon import dispatcher
-from Exon.modules.sql import BASE, SESSION
+from Zen import dispatcher
+from Zen.modules.sql import BASE, SESSION
 
 
 class Federations(BASE):

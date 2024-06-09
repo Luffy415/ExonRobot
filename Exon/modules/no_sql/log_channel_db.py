@@ -27,7 +27,7 @@ SOFTWARE.
 #     TG  :- Abishnoi_bots
 #     GITHUB :- Abishnoi69 ""
 
-from Exon.modules.no_sql import get_collection
+from Zen.modules.no_sql import get_collection
 
 LOG_DATA = get_collection("log_channels")
 

@@ -26,7 +26,7 @@ from emoji import UNICODE_EMOJI
 from telegram import Message
 from telegram.ext import MessageFilter
 
-from Exon import DEMONS, DEV_USERS
+from Zen import DEMONS, DEV_USERS
 
 
 class CustomFilters:

@@ -32,10 +32,10 @@ from telegram import Bot, InlineKeyboardButton, InlineKeyboardMarkup, Update
 from telegram.error import BadRequest, Unauthorized
 from telegram.ext import CallbackQueryHandler, CommandHandler
 
-from Exon import DEV_USERS, dispatcher
-from Exon.modules.helper_funcs.filters import CustomFilters
-from Exon.modules.no_sql import global_bans_db as gban_db
-from Exon.modules.no_sql import users_db as user_db
+from Zen import DEV_USERS, dispatcher
+from Zen.modules.helper_funcs.filters import CustomFilters
+from Zen.modules.no_sql import global_bans_db as gban_db
+from Zen.modules.no_sql import users_db as user_db
 
 
 def get_invalid_chats(bot: Bot, update: Update, remove: bool = False):
@@ -238,7 +238,7 @@ __handlers__ = [DB_CLEANUP_HANDLER, LEAVE_MUTED_CHATS_HANDLER, BUTTON_HANDLER]
 
 
 # """
-from Exon.modules.language import gs
+from Zen.modules.language import gs
 
 
 def get_help(chat):

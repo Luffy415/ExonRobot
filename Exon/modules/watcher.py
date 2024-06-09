@@ -34,9 +34,9 @@ from pyrogram import filters
 from pyrogram.enums import MessageEntityType
 
 
-from Exon import Abishnoi as app
+from Zen import Abishnoi as app
 from Abg.helpers.human_read import get_readable_time
-from Exon.modules.no_sql.afk_db import is_afk, remove_afk
+from Zen.modules.no_sql.afk_db import is_afk, remove_afk
 
 chat_watcher_group = 1
 

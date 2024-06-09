@@ -41,9 +41,9 @@ from PIL import Image, ImageDraw, ImageFilter, ImageFont
 from pyrogram.types import Message
 from wget import download
 
-from Exon.utils import aiodownloader
-from Exon.utils.dbfunctions import start_restart_stage
-from Exon.utils.fetch import fetch
+from Zen.utils import aiodownloader
+from Zen.utils.dbfunctions import start_restart_stage
+from Zen.utils.fetch import fetch
 
 """
 Just import 'downloader' anywhere and do downloader.download() to
@@ -57,7 +57,7 @@ downloader = aiodownloader.Handler()
 async def restart(m: Message):
     if m:
         await start_restart_stage(m.chat.id, m.message_id)
-    execvp(executable, [executable, "-m", "Exon"])
+    execvp(executable, [executable, "-m", "Zen"])
 
 
 async def download_url(url: str):

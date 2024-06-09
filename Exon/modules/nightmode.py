@@ -31,9 +31,9 @@ from telegram import ParseMode
 from telethon import *
 from telethon.tl.types import ChatBannedRights
 
-from Exon import LOGGER, OWNER_ID, telethn
-from Exon.events import register
-from Exon.modules.sql.night_mode_sql import (
+from Zen import LOGGER, OWNER_ID, telethn
+from Zen.events import register
+from Zen.modules.sql.night_mode_sql import (
     add_nightmode,
     get_all_chat_id,
     is_nightmode_indb,
@@ -192,7 +192,7 @@ __mod_name__ = "𝐍-ᴍᴏᴅᴇ"
 
 
 # """
-from Exon.modules.language import gs
+from Zen.modules.language import gs
 
 
 def get_help(chat):

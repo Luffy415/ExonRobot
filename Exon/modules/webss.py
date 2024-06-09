@@ -34,8 +34,8 @@ from io import BytesIO
 
 from pyrogram.types import Message
 
-from Exon import Abishnoi as app
-from Exon import aiohttpsession as session
+from Zen import Abishnoi as app
+from Zen import aiohttpsession as session
 
 
 async def post(url: str, *args, **kwargs):
@@ -116,7 +116,7 @@ async def take_ss(_, message: Message):
 
 __mod_name__ = "𝐖ᴇʙsʜᴏᴛ"
 
-from Exon.modules.language import gs
+from Zen.modules.language import gs
 
 
 def get_help(chat):

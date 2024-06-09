@@ -32,8 +32,8 @@ import random
 from telegram import ParseMode
 from telethon import Button
 
-from Exon import OWNER_ID, SUPPORT_CHAT
-from Exon import telethn as tbot
+from Zen import OWNER_ID, SUPPORT_CHAT
+from Zen import telethn as tbot
 
 from ..events import register
 
@@ -44,7 +44,7 @@ async def feedback(e):
     user_id = e.sender.id
     user_name = e.sender.first_name
     mention = f"[{user_name}](tg://user?id={str(user_id)})"
-    Exon = (
+    Zen = (
         "https://telegra.ph/file/753bfe51f0e0314f1f3ff.jpg",
         "https://telegra.ph/file/20bab4a499d6dccd823f1.jpg",
         "https://telegra.ph/file/2ef1c255ac51d9febb3f4.jpg",
@@ -83,7 +83,7 @@ async def feedback(e):
     await tbot.send_message(
         SUPPORT_CHAT,
         f"{logger_text}",
-        file=random.choice(Exon),
+        file=random.choice(Zen),
         link_preview=False,
     )
-    await e.reply(TEXT, file=random.choice(Exon), buttons=BUTTON)
+    await e.reply(TEXT, file=random.choice(Zen), buttons=BUTTON)

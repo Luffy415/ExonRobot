@@ -35,10 +35,10 @@ from telegram import Bot, InlineKeyboardButton, InlineKeyboardMarkup, ParseMode,
 from telegram.error import BadRequest, Unauthorized
 from telegram.ext import CallbackQueryHandler, CommandHandler
 
-import Exon.modules.sql.connection_sql as sql
-from Exon import DEV_USERS, DRAGONS, dispatcher
-from Exon.modules.helper_funcs import chat_status
-from Exon.modules.helper_funcs.alternate import send_message, typing_action
+import Zen.modules.sql.connection_sql as sql
+from Zen import DEV_USERS, DRAGONS, dispatcher
+from Zen.modules.helper_funcs import chat_status
+from Zen.modules.helper_funcs.alternate import send_message, typing_action
 
 user_admin = chat_status.user_admin
 
@@ -437,7 +437,7 @@ dispatcher.add_handler(CONNECT_BTN_HANDLER)
 
 
 # """
-from Exon.modules.language import gs
+from Zen.modules.language import gs
 
 
 def get_help(chat):

@@ -32,14 +32,14 @@ from telegram.error import BadRequest
 from telegram.ext import CallbackContext, Filters
 from telegram.utils.helpers import escape_markdown
 
-import Exon.modules.sql.rules_sql as sql
-from Exon import dispatcher
-from Exon.modules.helper_funcs.anonymous import AdminPerms, user_admin
-from Exon.modules.helper_funcs.decorators import Exoncmd
-from Exon.modules.helper_funcs.string_handling import markdown_parser
+import Zen.modules.sql.rules_sql as sql
+from Zen import dispatcher
+from Zen.modules.helper_funcs.anonymous import AdminPerms, user_admin
+from Zen.modules.helper_funcs.decorators import Zencmd
+from Zen.modules.helper_funcs.string_handling import markdown_parser
 
 
-@Exoncmd(command="rules", filters=Filters.chat_type.groups)
+@Zencmd(command="rules", filters=Filters.chat_type.groups)
 def get_rules(update: Update, _: CallbackContext):
     chat_id = update.effective_chat.id
     send_rules(update, chat_id)
@@ -124,7 +124,7 @@ close_keyboard = InlineKeyboardMarkup(
 )
 
 
-@Exoncmd(command="setrules", filters=Filters.chat_type.groups)
+@Zencmd(command="setrules", filters=Filters.chat_type.groups)
 @user_admin(AdminPerms.CAN_CHANGE_INFO)
 def set_rules(update: Update, context: CallbackContext):
     chat_id = update.effective_chat.id
@@ -144,7 +144,7 @@ def set_rules(update: Update, context: CallbackContext):
         update.effective_message.reply_text("ꜱᴜᴄᴇꜱꜱꜰᴜʟʟʏ ꜱᴇᴛ ʀᴜʟᴇꜱ ꜰᴏʀ ᴛʜɪꜱ ɢʀᴏᴜᴘ.")
 
 
-@Exoncmd(command="clearrules", filters=Filters.chat_type.groups)
+@Zencmd(command="clearrules", filters=Filters.chat_type.groups)
 @user_admin(AdminPerms.CAN_CHANGE_INFO)
 def clear_rules(update: Update, context: CallbackContext):
     chat_id = update.effective_chat.id
@@ -177,7 +177,7 @@ __mod_name__ = "𝐑ᴜʟᴇs"
 
 
 # """
-from Exon.modules.language import gs
+from Zen.modules.language import gs
 
 
 def get_help(chat):

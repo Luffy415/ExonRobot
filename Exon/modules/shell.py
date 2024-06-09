@@ -32,8 +32,8 @@ import subprocess
 from telegram import ParseMode, Update
 from telegram.ext import CallbackContext, CommandHandler
 
-from Exon import LOGGER, dispatcher
-from Exon.modules.helper_funcs.chat_status import dev_plus
+from Zen import LOGGER, dispatcher
+from Zen.modules.helper_funcs.chat_status import dev_plus
 
 
 @dev_plus

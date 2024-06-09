@@ -52,8 +52,8 @@ from telethon import events
 from telethon.tl.functions.channels import GetFullChannelRequest
 from telethon.tl.types import ChannelParticipantsAdmins
 
-import Exon.modules.sql.userinfo_sql as sql
-from Exon import (
+import Zen.modules.sql.userinfo_sql as sql
+from Zen import (
     DEMONS,
     DEV_USERS,
     DRAGONS,
@@ -65,14 +65,14 @@ from Exon import (
     dispatcher,
     sw,
 )
-from Exon import telethn as Exon
-from Exon.__main__ import STATS, TOKEN, USER_INFO
-from Exon.modules.helper_funcs.chat_status import sudo_plus
-from Exon.modules.helper_funcs.decorators import Exoncallback, Exoncmd
-from Exon.modules.helper_funcs.extraction import extract_user
-from Exon.modules.no_sql.global_bans_db import is_user_gbanned
-from Exon.modules.no_sql.users_db import get_user_num_chats
-from Exon.modules.sql import SESSION
+from Zen import telethn as Zen
+from Zen.__main__ import STATS, TOKEN, USER_INFO
+from Zen.modules.helper_funcs.chat_status import sudo_plus
+from Zen.modules.helper_funcs.decorators import Zencallback, Zencmd
+from Zen.modules.helper_funcs.extraction import extract_user
+from Zen.modules.no_sql.global_bans_db import is_user_gbanned
+from Zen.modules.no_sql.users_db import get_user_num_chats
+from Zen.modules.sql import SESSION
 
 
 def no_by_per(totalhp, percentage):
@@ -156,7 +156,7 @@ def make_bar(per):
     return "⬢" * done + "⬡" * (10 - done)
 
 
-@Exoncmd(command="id")
+@Zencmd(command="id")
 def get_id(update: Update, context: CallbackContext):
     bot, args = context.bot, context.args
     message = update.effective_message
@@ -192,7 +192,7 @@ def get_id(update: Update, context: CallbackContext):
         )
 
 
-@Exon.on(
+@Zen.on(
     events.NewMessage(
         pattern="/ginfo ",
         from_users=(TIGERS or []) + (DRAGONS or []) + (DEMONS or []),
@@ -232,7 +232,7 @@ async def group_info(event) -> None:
     await event.reply(msg)
 
 
-@Exoncmd(command="gifid")
+@Zencmd(command="gifid")
 def gifid(update: Update, context: CallbackContext):
     msg = update.effective_message
     if msg.reply_to_message and msg.reply_to_message.animation:
@@ -244,7 +244,7 @@ def gifid(update: Update, context: CallbackContext):
         update.effective_message.reply_text("Please reply to a gif to get its ID.")
 
 
-@Exoncmd(command=["info", "book"])
+@Zencmd(command=["info", "book"])
 def info(update: Update, context: CallbackContext):
     bot, args = context.bot, context.args
     message = update.effective_message
@@ -419,7 +419,7 @@ def info(update: Update, context: CallbackContext):
     rep.delete()
 
 
-@Exoncmd(command="me")
+@Zencmd(command="me")
 def about_me(update: Update, context: CallbackContext):
     bot, args = context.bot, context.args
     message = update.effective_message
@@ -443,7 +443,7 @@ def about_me(update: Update, context: CallbackContext):
         )
 
 
-@Exoncmd(command="setme")
+@Zencmd(command="setme")
 def set_about_me(update: Update, context: CallbackContext):
     message = update.effective_message
     user_id = message.from_user.id
@@ -473,7 +473,7 @@ def set_about_me(update: Update, context: CallbackContext):
             )
 
 
-@Exoncmd(command="stats", can_disable=True)
+@Zencmd(command="stats", can_disable=True)
 @sudo_plus
 def stats(update, context):
     db_size = SESSION.execute(
@@ -508,7 +508,7 @@ def stats(update, context):
             status
             + "\n*Bot statistics*:\n"
             + "\n".join([mod.__stats__() for mod in STATS])
-            + "\n\n[⍙ ɢɪᴛʜᴜʙ](https://github.com/Abishnoi69/ExonRobot) | ⍚\n\n "
+            + "\n\n[⍙ ɢɪᴛʜᴜʙ](https://github.com/Abishnoi69/ZenRobot) | ⍚\n\n "
             + "╘══「 by [ᴀʙɪsʜɴᴏɪ](github.com/Abishnoi69) 」\n",
             parse_mode=ParseMode.MARKDOWN,
             reply_markup=InlineKeyboardMarkup(kb),
@@ -522,7 +522,7 @@ def stats(update, context):
                         "\n*Bot statistics*:\n"
                         + "\n".join(mod.__stats__() for mod in STATS)
                     )
-                    + "\n\n⍙ [ɢɪᴛʜᴜʙ](https://github.com/Abishnoi69/ExonRobot) | ⍚ \n\n"
+                    + "\n\n⍙ [ɢɪᴛʜᴜʙ](https://github.com/Abishnoi69/ZenRobot) | ⍚ \n\n"
                 )
                 + "╘══「 by [ᴅʏɴᴀᴍɪᴄ](github.com/Abishnoi69) 」\n"
             ),
@@ -532,7 +532,7 @@ def stats(update, context):
         )
 
 
-@Exoncallback(pattern=r"^pingCB")
+@Zencallback(pattern=r"^pingCB")
 def pingCallback(update: Update, context: CallbackContext):
     query = update.callback_query
     start_time = time.time()
@@ -542,7 +542,7 @@ def pingCallback(update: Update, context: CallbackContext):
     query.answer(f"ᴘᴏɴɢ 🌺! {ping_time}ms")
 
 
-@Exoncmd(command="bio")
+@Zencmd(command="bio")
 def about_bio(update: Update, context: CallbackContext):
     bot, args = context.bot, context.args
     message = update.effective_message
@@ -599,7 +599,7 @@ def about_bio(update: Update, context: CallbackContext):
         message.reply_text("ʀᴇᴘʟʏ ᴛᴏ ꜱᴏᴍᴇᴏɴᴇ'ꜱ ᴍᴇꜱꜱᴀɢᴇ ᴛᴏ ꜱᴇᴛ ᴛʜᴇɪʀ ʙɪᴏ!")
 
 
-@Exoncmd(command="setbio")
+@Zencmd(command="setbio")
 def set_about_bio(update: Update, context: CallbackContext):
     message = update.effective_message
     sender_id = update.effective_user.id
@@ -662,7 +662,7 @@ __mod_name__ = "𝐈ɴғᴏ "
 
 
 # """
-from Exon.modules.language import gs
+from Zen.modules.language import gs
 
 
 def get_help(chat):

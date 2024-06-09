@@ -3,5 +3,5 @@
 #git clone $REPO_URL Repo
 #cd Repo
 #pip3 install -U -r requirements.txt
-python3 -m Exon
+python3 -m Zen
 

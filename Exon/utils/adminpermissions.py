@@ -23,7 +23,7 @@ SOFTWARE.
 """
 
 
-from Exon import Abishnoi as AsuX
+from Zen import Abishnoi as AsuX
 
 
 async def member_permissions(chat_id: int, user_id: int):

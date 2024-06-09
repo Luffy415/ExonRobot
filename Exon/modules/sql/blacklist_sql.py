@@ -32,7 +32,7 @@ import threading
 
 from sqlalchemy import Column, Integer, String, UnicodeText, distinct, func
 
-from Exon.modules.sql import BASE, SESSION
+from Zen.modules.sql import BASE, SESSION
 
 
 class BlackListFilters(BASE):

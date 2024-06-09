@@ -29,7 +29,7 @@ SOFTWARE.
 
 from sqlalchemy import Column, String
 
-from Exon.modules.sql import BASE, SESSION
+from Zen.modules.sql import BASE, SESSION
 
 
 class Nightmode(BASE):

@@ -5,12 +5,12 @@ from telegram.error import BadRequest, Unauthorized
 from telegram.ext import CallbackContext, Filters
 from telegram.utils.helpers import mention_html
 
-import Exon.modules.sql.log_channel_sql as logsql
-from Exon import DRAGONS, LOGGER, TIGERS, WOLVES
-from Exon.modules.helper_funcs.chat_status import user_not_admin
-from Exon.modules.helper_funcs.decorators import Exoncallback, Exoncmd, Exonmsg
-from Exon.modules.log_channel import loggable
-from Exon.modules.sql import reporting_sql as sql
+import Zen.modules.sql.log_channel_sql as logsql
+from Zen import DRAGONS, LOGGER, TIGERS, WOLVES
+from Zen.modules.helper_funcs.chat_status import user_not_admin
+from Zen.modules.helper_funcs.decorators import Zencallback, Zencmd, Zenmsg
+from Zen.modules.log_channel import loggable
+from Zen.modules.sql import reporting_sql as sql
 
 from ..modules.helper_funcs.anonymous import AdminPerms, user_admin
 
@@ -18,7 +18,7 @@ REPORT_GROUP = 12
 REPORT_IMMUNE_USERS = DRAGONS + TIGERS + WOLVES
 
 
-@Exoncmd(command="reports")
+@Zencmd(command="reports")
 @user_admin(AdminPerms.CAN_CHANGE_INFO)
 def report_setting(update: Update, context: CallbackContext):
     bot, args = context.bot, context.args
@@ -62,8 +62,8 @@ def report_setting(update: Update, context: CallbackContext):
         )
 
 
-@Exoncmd(command="report", filters=Filters.chat_type.groups, group=REPORT_GROUP)
-@Exonmsg((Filters.regex(r"(?i)@admin(s)?")), group=REPORT_GROUP)
+@Zencmd(command="report", filters=Filters.chat_type.groups, group=REPORT_GROUP)
+@Zenmsg((Filters.regex(r"(?i)@admin(s)?")), group=REPORT_GROUP)
 @user_not_admin
 @loggable
 def report(update: Update, context: CallbackContext) -> str:
@@ -234,7 +234,7 @@ def __user_settings__(user_id):
     )
 
 
-@Exoncallback(pattern=r"report_")
+@Zencallback(pattern=r"report_")
 def buttons(update: Update, context: CallbackContext):
     bot = context.bot
     query = update.callback_query
@@ -285,7 +285,7 @@ __mod_name__ = "𝐑ᴇᴘᴏʀᴛ"
 
 
 # """
-from Exon.modules.language import gs
+from Zen.modules.language import gs
 
 
 def get_help(chat):

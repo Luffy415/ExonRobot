@@ -51,12 +51,12 @@ from telegram.error import BadRequest
 from telegram.ext import CallbackContext, CommandHandler, Filters
 from telegraph import Telegraph
 
-from Exon import OWNER_ID, dispatcher
-from Exon.modules.disable import DisableAbleCommandHandler
-from Exon.modules.helper_funcs.alternate import send_action, typing_action
-from Exon.modules.helper_funcs.chat_status import user_admin
-from Exon.modules.helper_funcs.decorators import Exoncmd
-from Exon.modules.helper_funcs.filters import CustomFilters
+from Zen import OWNER_ID, dispatcher
+from Zen.modules.disable import DisableAbleCommandHandler
+from Zen.modules.helper_funcs.alternate import send_action, typing_action
+from Zen.modules.helper_funcs.chat_status import user_admin
+from Zen.modules.helper_funcs.decorators import Zencmd
+from Zen.modules.helper_funcs.filters import CustomFilters
 
 MARKDOWN_HELP = f"""
 Markdown is a very powerful formatting tool supported by telegram. {dispatcher.bot.first_name} has some enhancements, to make sure that \
@@ -78,7 +78,7 @@ This will create two buttons on a single line, instead of one button per line.
 Keep in mind that your message <b>MUST</b> contain some text other than just a button!
 """
 
-wibu = "Exon"
+wibu = "Zen"
 telegraph = Telegraph()
 data = telegraph.create_account(short_name=wibu)
 auth_url = data["auth_url"]
@@ -119,7 +119,7 @@ def markdown_help_sender(update: Update):
 @typing_action
 def src(update, _):
     update.effective_message.reply_text(
-        "Hey there! You can find what makes me click [here](https://github.com/Abishnoi69/ExonRobot).",
+        "Hey there! You can find what makes me click [here](https://github.com/Abishnoi69/ZenRobot).",
         parse_mode=ParseMode.MARKDOWN,
         disable_web_page_preview=True,
     )
@@ -229,7 +229,7 @@ def system_status(update, context):
     context.bot.sendMessage(update.effective_chat.id, status, parse_mode=ParseMode.HTML)
 
 
-@Exoncmd(command="wiki")
+@Zencmd(command="wiki")
 @typing_action
 def wiki(update, context):
     Shinano = re.split(pattern="wiki", string=update.effective_message.text)
@@ -240,7 +240,7 @@ def wiki(update, context):
         )
     else:
         try:
-            Exon = update.effective_message.reply_text(
+            Zen = update.effective_message.reply_text(
                 "Searching the keywords from wikipedia..."
             )
             keyboard = InlineKeyboardMarkup(
@@ -255,7 +255,7 @@ def wiki(update, context):
             )
             context.bot.editMessageText(
                 chat_id=update.effective_chat.id,
-                message_id=Exon.message_id,
+                message_id=Zen.message_id,
                 text=wikipedia.summary(Shinano, sentences=10),
                 reply_markup=keyboard,
             )
@@ -269,7 +269,7 @@ def wiki(update, context):
             )
 
 
-@Exoncmd(command="ud")
+@Zencmd(command="ud")
 @typing_action
 def ud(update, context):
     msg = update.effective_message
@@ -346,7 +346,7 @@ __handlers__ = [
 
 
 # """
-from Exon.modules.language import gs
+from Zen.modules.language import gs
 
 
 def get_help(chat):

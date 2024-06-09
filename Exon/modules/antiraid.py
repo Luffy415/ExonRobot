@@ -35,15 +35,15 @@ from telegram import InlineKeyboardButton, InlineKeyboardMarkup, ParseMode, Upda
 from telegram.ext import CallbackContext
 from telegram.utils.helpers import mention_html
 
-import Exon.modules.sql.welcome_sql as sql
-from Exon import LOGGER as log
-from Exon.modules.cron_jobs import j
-from Exon.modules.helper_funcs.anonymous import AdminPerms
-from Exon.modules.helper_funcs.anonymous import resolve_user as res_user
-from Exon.modules.helper_funcs.anonymous import user_admin as u_admin
-from Exon.modules.helper_funcs.chat_status import connection_status, user_admin_no_reply
-from Exon.modules.helper_funcs.decorators import Exoncallback, Exoncmd
-from Exon.modules.log_channel import loggable
+import Zen.modules.sql.welcome_sql as sql
+from Zen import LOGGER as log
+from Zen.modules.cron_jobs import j
+from Zen.modules.helper_funcs.anonymous import AdminPerms
+from Zen.modules.helper_funcs.anonymous import resolve_user as res_user
+from Zen.modules.helper_funcs.anonymous import user_admin as u_admin
+from Zen.modules.helper_funcs.chat_status import connection_status, user_admin_no_reply
+from Zen.modules.helper_funcs.decorators import Zencallback, Zencmd
+from Zen.modules.log_channel import loggable
 
 
 def get_time(time: str) -> int:
@@ -60,7 +60,7 @@ def get_readable_time(time: int) -> str:
     return f"{t[0]} ʜᴏᴜʀ(s)" if time >= 3600 else f"{t[1]} ᴍɪɴᴜᴛᴇs"
 
 
-@Exoncmd(command="raid", pass_args=True)
+@Zencmd(command="raid", pass_args=True)
 @connection_status
 @loggable
 @u_admin(AdminPerms.CAN_CHANGE_INFO)
@@ -145,7 +145,7 @@ def setRaid(update: Update, context: CallbackContext) -> Optional[str]:
             )
 
 
-@Exoncallback(pattern="enable_raid=")
+@Zencallback(pattern="enable_raid=")
 @connection_status
 @user_admin_no_reply
 @loggable
@@ -184,7 +184,7 @@ def enable_raid_cb(update: Update, _: CallbackContext) -> Optional[str]:
     return logmsg
 
 
-@Exoncallback(pattern="disable_raid=")
+@Zencallback(pattern="disable_raid=")
 @connection_status
 @user_admin_no_reply
 @loggable
@@ -203,7 +203,7 @@ def disable_raid_cb(update: Update, _: CallbackContext) -> Optional[str]:
     return f"<b>{html.escape(chat.title)}:</b>\n#𝐑𝐀𝐈𝐃\nᴅɪsᴀʙʟᴇᴅ\n<b>ᴀᴅᴍɪɴ:</b> {mention_html(user.id, user.first_name)}\n"
 
 
-@Exoncallback(pattern="cancel_raid=")
+@Zencallback(pattern="cancel_raid=")
 @connection_status
 @user_admin_no_reply
 def disable_raid_cb(update: Update, context: CallbackContext):
@@ -215,7 +215,7 @@ def disable_raid_cb(update: Update, context: CallbackContext):
     )
 
 
-@Exoncmd(command="raidtime")
+@Zencmd(command="raidtime")
 @connection_status
 @loggable
 @u_admin(AdminPerms.CAN_CHANGE_INFO)
@@ -252,7 +252,7 @@ def raidtime(update: Update, context: CallbackContext) -> Optional[str]:
         )
 
 
-@Exoncmd(command="raidactiontime", pass_args=True)
+@Zencmd(command="raidactiontime", pass_args=True)
 @connection_status
 @u_admin(AdminPerms.CAN_CHANGE_INFO)
 @loggable
@@ -291,7 +291,7 @@ def raidtime(update: Update, context: CallbackContext) -> Optional[str]:
 
 # ғᴏʀ ʜᴇʟᴘ ᴍᴇɴᴜ
 # """
-from Exon.modules.language import gs
+from Zen.modules.language import gs
 
 
 def get_help(chat):

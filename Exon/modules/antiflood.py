@@ -35,14 +35,14 @@ from telegram.error import BadRequest
 from telegram.ext import CommandHandler, Filters, MessageHandler
 from telegram.utils.helpers import mention_html
 
-from Exon import dispatcher
-from Exon.modules.connection import connected
-from Exon.modules.helper_funcs.alternate import send_message, typing_action
-from Exon.modules.helper_funcs.chat_status import is_user_admin
-from Exon.modules.helper_funcs.string_handling import extract_time
-from Exon.modules.log_channel import loggable
-from Exon.modules.sql import antiflood_sql as sql
-from Exon.modules.sql.approve_sql import is_approved
+from Zen import dispatcher
+from Zen.modules.connection import connected
+from Zen.modules.helper_funcs.alternate import send_message, typing_action
+from Zen.modules.helper_funcs.chat_status import is_user_admin
+from Zen.modules.helper_funcs.string_handling import extract_time
+from Zen.modules.log_channel import loggable
+from Zen.modules.sql import antiflood_sql as sql
+from Zen.modules.sql.approve_sql import is_approved
 
 from ..modules.helper_funcs.anonymous import AdminPerms, user_admin
 
@@ -333,7 +333,7 @@ __mod_name__ = "𝐀-ғʟᴏᴏᴅ"
 # ғᴏʀ ʜᴇʟᴘ ᴍᴇɴᴜ
 
 # """
-from Exon.modules.language import gs
+from Zen.modules.language import gs
 
 
 def get_help(chat):

@@ -9,10 +9,10 @@ postgres-data/
 logs/
 .idea/
 
-Exon/config.py
-Exon/*.session
-Exon/*.session-journal
-Exon/config.ini
+Zen/config.py
+Zen/*.session
+Zen/*.session-journal
+Zen/config.ini
 log.txt
 *.pyc
 .idea/
@@ -20,14 +20,14 @@ log.txt
 .pydevproject
 .directory
 .vscode
-Exon/modules/helper_funcs/temp.txt
-Exon/elevated_users.json
+Zen/modules/helper_funcs/temp.txt
+Zen/elevated_users.json
 start-3.9.bat
 *.session
 kangsticker.png
 venv
 env
-Exon.session-journal
+Zen.session-journal
 updates.txt
 *.exe
 

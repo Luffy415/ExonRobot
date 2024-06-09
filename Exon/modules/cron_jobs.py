@@ -38,22 +38,22 @@ from telegram.ext.callbackcontext import CallbackContext
 from telegram.ext.filters import Filters
 from telegram.update import Update
 
-from Exon import BACKUP_PASS, DB_URL, DEV_USERS, LOGGER, OWNER_ID, dispatcher
-from Exon.modules.helper_funcs.decorators import Exoncmd
+from Zen import BACKUP_PASS, DB_URL, DEV_USERS, LOGGER, OWNER_ID, dispatcher
+from Zen.modules.helper_funcs.decorators import Zencmd
 
 
-@Exoncmd(command="backupdb", filters=Filters.user(DEV_USERS) | Filters.user(OWNER_ID))
+@Zencmd(command="backupdb", filters=Filters.user(DEV_USERS) | Filters.user(OWNER_ID))
 def backup_now(_: Update, ctx: CallbackContext):
     cronjob.run(dispatcher=dispatcher)
 
 
-@Exoncmd(command="stopjobs", filters=Filters.user(DEV_USERS) | Filters.user(OWNER_ID))
+@Zencmd(command="stopjobs", filters=Filters.user(DEV_USERS) | Filters.user(OWNER_ID))
 def stop_jobs(update: Update, _: CallbackContext):
     print(j.stop())
     update.effective_message.reply_text("Scheduler has been shut down")
 
 
-@Exoncmd(command="startjobs", filters=Filters.user(DEV_USERS) | Filters.user(OWNER_ID))
+@Zencmd(command="startjobs", filters=Filters.user(DEV_USERS) | Filters.user(OWNER_ID))
 def start_jobs(update: Update, _: CallbackContext):
     print(j.start())
     update.effective_message.reply_text("Scheduler started")
@@ -108,7 +108,7 @@ def backup_db(_: CallbackContext):
         tmp.delete()
 
 
-@Exoncmd(
+@Zencmd(
     command="purgebackups", filters=Filters.user(DEV_USERS) | Filters.user(OWNER_ID)
 )
 def del_bkp_fldr(update: Update, _: CallbackContext):
@@ -130,7 +130,7 @@ def term(cmd, info):
         LOGGER.info(f"{stderr}")
 
 
-from Exon import updater as u
+from Zen import updater as u
 
 # run the backup daily at 1:00
 twhen = datetime.datetime.strptime("01:00", "%H:%M").time()

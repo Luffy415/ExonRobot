@@ -28,7 +28,7 @@ SOFTWARE.
 #     GITHUB :- ABISHNOI69 ""
 from sqlalchemy import Column, Numeric, String
 
-from Exon.modules.sql import BASE, SESSION
+from Zen.modules.sql import BASE, SESSION
 
 
 class forceSubscribe(BASE):

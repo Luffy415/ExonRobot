@@ -31,11 +31,11 @@ SOFTWARE.
 from motor.motor_asyncio import AsyncIOMotorClient as MongoCli
 from pymongo import MongoClient, collection
 
-from Exon import DB_NAME
-from Exon import MONGO_URI as MONGO_DB_URI
+from Zen import DB_NAME
+from Zen import MONGO_URI as MONGO_DB_URI
 
 mongo = MongoCli(MONGO_DB_URI)
-Asudb = mongo.ExonRobot_
+Asudb = mongo.ZenRobot_
 
 try:
     client = MongoClient(MONGO_DB_URI)

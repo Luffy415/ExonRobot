@@ -33,7 +33,7 @@ import typing
 
 from sqlalchemy import BigInteger, Boolean, Column, String, distinct, func
 
-from Exon.modules.sql import BASE, SESSION
+from Zen.modules.sql import BASE, SESSION
 
 
 class GroupLogs(BASE):

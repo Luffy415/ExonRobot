@@ -40,9 +40,9 @@ from telegram import (
 )
 from telegram.ext import CallbackContext
 
-from Exon import dispatcher
-from Exon.modules.disable import DisableAbleCommandHandler
-from Exon.modules.helper_funcs.alternate import send_action, typing_action
+from Zen import dispatcher
+from Zen.modules.disable import DisableAbleCommandHandler
+from Zen.modules.helper_funcs.alternate import send_action, typing_action
 
 trans = SyncTranslator()
 
@@ -107,12 +107,12 @@ def gtts(update, context):
             reply = reply.replace(x, "")
     try:
         tts = gTTS(reply)
-        tts.save("Exon.mp3")
-        with open("Exon.mp3", "rb") as speech:
+        tts.save("Zen.mp3")
+        with open("Zen.mp3", "rb") as speech:
             msg.reply_audio(speech)
     finally:
-        if os.path.isfile("Exon.mp3"):
-            os.remove("Exon.mp3")
+        if os.path.isfile("Zen.mp3"):
+            os.remove("Zen.mp3")
 
 
 # Open API key
@@ -170,7 +170,7 @@ __mod_name__ = "𝐓ʀᴀɴsʟᴀᴛᴏʀ"
 
 
 # """
-from Exon.modules.language import gs
+from Zen.modules.language import gs
 
 
 def get_help(chat):

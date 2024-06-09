@@ -28,7 +28,7 @@ StartTime = time.time()
 
 
 def get_user_list(__init__, key):
-    with open(f"{os.getcwd()}/Exon/{__init__}", "r") as json_file:
+    with open(f"{os.getcwd()}/Zen/{__init__}", "r") as json_file:
         return json.load(json_file)[key]
 
 
@@ -81,7 +81,7 @@ API_HASH = Config.API_HASH
 BAN_STICKER = "CAADBQAD3AcAAor_2VaLJ7V3SdP8dgI"
 REDIS_URL = Config.REDIS_URL
 SUPPORT_CHAT = Config.SUPPORT_CHAT
-MONGO_DB = "Exon"  # DON'T EDIT
+MONGO_DB = "Zen"  # DON'T EDIT
 MONGO_PORT = "27017"  # DON'T EDIT
 MONGO_URI = Config.MONGO_URI
 DB_NAME = Config.DB_NAME
@@ -127,10 +127,10 @@ else:
         sw = None
         LOGGER.warning("ᴄᴀɴ'ᴛ ᴄᴏɴɴᴇᴄᴛ ᴛᴏ sᴘᴀᴍᴡᴀᴛᴄʜ!")
 
-from Exon.modules.sql import SESSION
+from Zen.modules.sql import SESSION
 
 telegraph = Telegraph()
-telegraph.create_account(short_name="Exon")
+telegraph.create_account(short_name="Zen")
 
 defaults = tg.Defaults(run_async=True)
 
@@ -222,19 +222,19 @@ async def eor(msg: Message, **kwargs):
     return await func(**{k: v for k, v in kwargs.items() if k in spec})
 
 
-from Exon.modules.helper_funcs.handlers import CustomMessageHandler, CustomRegexHandler
+from Zen.modules.helper_funcs.handlers import CustomMessageHandler, CustomRegexHandler
 
 tg.RegexHandler = CustomRegexHandler
 tg.MessageHandler = CustomMessageHandler
 
-from Exon.modules.helper_funcs.handlers import CustomCommandHandler
+from Zen.modules.helper_funcs.handlers import CustomCommandHandler
 
 if CUSTOM_CMD and len(CUSTOM_CMD) >= 1:
     tg.CommandHandler = CustomCommandHandler
 
 
 try:
-    from Exon.antispam import antispam_cek_user, antispam_restrict_user, detect_user
+    from Zen.antispam import antispam_cek_user, antispam_restrict_user, detect_user
 
     LOGGER.info("ɴᴏᴛᴇ: ᴀɴᴛɪsᴘᴀᴍ ʟᴏᴀᴅᴇᴅ!")
     antispam_module = True

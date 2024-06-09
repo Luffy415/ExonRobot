@@ -31,7 +31,7 @@ import httpx
 from pyrogram import Client
 from pyrogram.types import Message
 
-from Exon import Abishnoi
+from Zen import Abishnoi
 
 timeout = httpx.Timeout(40, pool=None)
 

@@ -1,6 +1,6 @@
 from telethon import events
 
-from Exon import telethn
+from Zen import telethn
 
 
 def register(**args):

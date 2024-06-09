@@ -32,10 +32,10 @@ from typing import Generator, List, Union
 
 from telegram import InlineKeyboardButton, InlineKeyboardMarkup, Update
 
-import Exon.modules.sql.language_sql as sql
-from Exon.langs import get_language, get_languages, get_string
-from Exon.modules.helper_funcs.chat_status import user_admin, user_admin_no_reply
-from Exon.modules.helper_funcs.decorators import Exoncallback, Exoncmd
+import Zen.modules.sql.language_sql as sql
+from Zen.langs import get_language, get_languages, get_string
+from Zen.modules.helper_funcs.chat_status import user_admin, user_admin_no_reply
+from Zen.modules.helper_funcs.decorators import Zencallback, Zencmd
 
 
 def paginate(iterable: Iterable, page_size: int) -> Generator[List, None, None]:
@@ -58,7 +58,7 @@ def gs(chat_id: Union[int, str], string: str) -> str:
         return "ᴍᴇ ɴᴏᴡ ʙᴜsʏ ᴡʜᴇɴ ғʀᴇᴇ ᴀᴅᴅ ᴛʜɪs "
 
 
-@Exoncmd(command="language")
+@Zencmd(command="language")
 @user_admin
 def set_lang(update: Update, _) -> None:
     chat = update.effective_chat
@@ -80,14 +80,14 @@ def set_lang(update: Update, _) -> None:
         [
             InlineKeyboardButton(
                 text="ʜᴇʟᴘ ᴜs ɪɴ ᴛʀᴀɴsʟᴀᴛɪᴏɴs",
-                url="https://github.com/Abishnoi69/ExonRobot",  # plz. Don't edit and change
+                url="https://github.com/Abishnoi69/ZenRobot",  # plz. Don't edit and change
             )
         ]
     )
     msg.reply_text(msg_text, reply_markup=InlineKeyboardMarkup(keyb))
 
 
-@Exoncallback(pattern=r"setLang_")
+@Zencallback(pattern=r"setLang_")
 @user_admin_no_reply
 def lang_button(update: Update, _) -> None:
     query = update.callback_query
