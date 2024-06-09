@@ -52,9 +52,6 @@ buttons = [
     ],
     [
         InlineKeyboardButton(text="🏡 ᴀʙᴏᴜᴛ 🏡", callback_data="ABG_"),
-        InlineKeyboardButton(
-            text="🥀 ᴅᴇᴠᴇʟᴏᴘᴇʀ 🥀", url=f"tg://user?id={OWNER_ID}"
-        ),
     ],
 ]
 
@@ -249,8 +246,7 @@ def start(update: Update, context: CallbackContext):    # sourcery no-metrics
                     escape_markdown(context.bot.first_name),
                     escape_markdown(uptime),
                     sql.num_chat_users(),
-                    sql.num_chats(),
-                    OWNER_ID,
+                    sql.num_chats()
                 ),
                 reply_markup=InlineKeyboardMarkup(buttons),
                 parse_mode=ParseMode.MARKDOWN,
