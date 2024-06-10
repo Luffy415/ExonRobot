@@ -42,11 +42,11 @@ PM_START_TEX = """
 
 buttons = [
     [
-        InlineKeyboardButton(text="sᴜᴘᴘᴏʀᴛ", url="https://t.me/TheGenChat"),
-        InlineKeyboardButton(text="ʜᴇʟᴘ ❔", callback_data="help_back"),
+        InlineKeyboardButton(text="ʜᴇʟᴘ ❔", callback_data="help_"),
         InlineKeyboardButton(text="ᴅᴇᴠᴇʟᴏᴘᴇʀ 👑", url="t.me/Noobkid09"),
     ],
     [
+        InlineKeyboardButton(text="sᴜᴘᴘᴏʀᴛ", url="https://t.me/TheGenChat"),
         InlineKeyboardButton(text="⚓ ᴀᴅᴅ ᴍᴇ ᴛᴏ ʏᴏᴜʀ ɢʀᴏᴜᴘ ⚓", url=f"t.me/{BOT_USERNAME}?startgroup=new"),
     ],
 ]
