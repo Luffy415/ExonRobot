@@ -157,11 +157,6 @@ def start(update: Update, context: CallbackContext):    # sourcery no-metrics
             update.effective_message.edit_text(
                 text=gs(chat.id, "pm_start_text").format(
                     escape_markdown(first_name),
-                    escape_markdown(context.bot.first_name),
-                    escape_markdown(uptime),
-                    sql.num_chat_users(),
-                    sql.num_chats(),
-                    OWNER_ID,
                 ),
                 reply_markup=InlineKeyboardMarkup(buttons),
                 parse_mode=ParseMode.MARKDOWN,
@@ -229,10 +224,6 @@ def start(update: Update, context: CallbackContext):    # sourcery no-metrics
                 photo="https://telegra.ph/file/e98624ba685286c473971.jpg",
                 caption=gs(chat.id, "pm_start_text").format(
                     escape_markdown(first_name),
-                    escape_markdown(context.bot.first_name),
-                    escape_markdown(uptime),
-                    sql.num_chat_users(),
-                    sql.num_chats()
                 ),
                 reply_markup=InlineKeyboardMarkup(buttons),
                 parse_mode=ParseMode.MARKDOWN,
