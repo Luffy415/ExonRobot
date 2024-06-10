@@ -42,6 +42,7 @@ PM_START_TEX = """
 
 buttons = [
     [
+        InlineKeyboardButton(text="sᴜᴘᴘᴏʀᴛ", url="https://t.me/TheGenChat"),
         InlineKeyboardButton(text="ʜᴇʟᴘ ❔", callback_data="help_back"),
         InlineKeyboardButton(text="ᴅᴇᴠᴇʟᴏᴘᴇʀ 👑", url="t.me/Noobkid09"),
     ],
