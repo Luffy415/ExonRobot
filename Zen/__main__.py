@@ -225,8 +225,9 @@ def start(update: Update, context: CallbackContext):    # sourcery no-metrics
         else:
             first_name = update.effective_user.first_name
             usr = update.effective_user
-            update.effective_message.reply_text(
-                text=gs(chat.id, "pm_start_text").format(
+            update.effective_message.reply_photo(
+                photo="https://telegra.ph/file/e98624ba685286c473971.jpg",
+                caption=gs(chat.id, "pm_start_text").format(
                     escape_markdown(first_name),
                     escape_markdown(context.bot.first_name),
                     escape_markdown(uptime),
